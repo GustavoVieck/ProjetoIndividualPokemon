@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 90%;
+    height: 700px;
+    border: 1px solid #333;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.fogo {
+    position: absolute;
+    bottom: 20px;
+    width: 80px;
+    right: -90px;
+    animation: fogo-animation 3s infinite linear;
+}
+.charizard{
+position: absolute;
+bottom: 10px;
+width: 120px;
+right: -90px;
+}
+
+@keyframes fogo-animation {
+    from{
+        right: 0;
+    }
+    to {
+        right: 100%;
+    }
+}

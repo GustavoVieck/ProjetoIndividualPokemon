@@ -1,0 +1,198 @@
+
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+ /* Fundo fixo quando rola */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: monospace;
+}
+
+main {
+    flex: 1;
+}
+
+/* Variáveis de cor */
+:root {
+    --preto: #000000;
+    --cinzaEscuro: hsl(0, 0%, 18%);
+    --vermelho: #ff0000;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(to top, #000000, #575757);
+    border-bottom: 1px solid var(--preto);
+
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+
+    height: 80px;
+
+}
+
+.titulo {
+    width: 100px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--vermelho);
+}
+
+.agora {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+/* BANNER */
+.banner {
+    height: 700px;
+    width: 100%;
+    background: linear-gradient(to top, #ffffff, #fc8a43);
+    background-size: cover;        /* Cobre toda a tela */
+    background-position: center;   /* Centraliza */
+    background-repeat: no-repeat;  /* Não repete */
+    background-attachment: fixed; 
+    border-bottom: 1px solid var(--preto);
+  
+}
+
+.banner .container {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    
+}
+.banner span {
+    color: var(--vermelho);
+    font-weight: bold;}
+
+.banner .container p {
+    color: var(--preto);
+    font-size: 20px;
+    text-align: center;
+    margin-left: 80px;
+    
+}
+.conteudo-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    }
+   .banner .charizard {
+        position: absolute;
+        margin-top: 100px;  /* Distância do topo */
+        right: 80px;  /* Distância da direita */
+        width: 400px; /* Tamanho da imagem */
+        height: auto; /* Para manter a proporção da imagem */
+      }
+ 
+.banner .botao{
+    padding: 12px 40px;
+    background-color: var(--vermelho);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    margin-left: 200px;
+    
+}
+.conteudo-banner p, 
+.conteudo-banner .botao {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.sobre-nos {
+    height: 400px;
+    width: 100%;
+  
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-size: 18px;
+
+    background: linear-gradient(to top, #ffffff, #5093ff);
+    background-size: cover;        /* Cobre toda a tela */
+    background-position: center;   /* Centraliza */
+    background-repeat: no-repeat;  /* Não repete */
+    background-attachment: fixed; 
+    border-bottom: 1px solid var(--preto);
+  }
+  .sobre-nos p{
+    width: 100%;
+  }
+
+
+/* Estilo da seção "Como jogar" */
+.como-jogar {
+    height: 700px;
+    width: 100%;
+  
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-size: 18px;
+    border-radius: 8px;
+    background: linear-gradient(to top, #ffffff, #50ff5c);
+    background-size: cover;        /* Cobre toda a tela */
+    background-position: center;   /* Centraliza */
+    background-repeat: no-repeat;  /* Não repete */
+    background-attachment: fixed; 
+  }
+
+
+/* FOOTER */
+.footer {
+    height: 150px;
+    width: 100%;
+    background-color: var(--preto);
+    font-family: monospace;
+}
+
+.footer .container {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.footer h2 {
+    margin: 0;
+}
