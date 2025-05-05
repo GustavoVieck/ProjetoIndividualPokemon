@@ -1,35 +1,174 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    overflow: hidden;
+    font-family: 'Press Start 2P', cursive;
+}
+
 .game-board {
-    width: 90%;
-    height: 700px;
-    border: 1px solid #333;
+    width: 100%;
+    height: 730px;
+    border-bottom: 15px solid #1dc614;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
 .fogo {
     position: absolute;
-    bottom: 20px;
+    bottom: 5px;
     width: 80px;
-    right: -90px;
-    animation: fogo-animation 3s infinite linear;
-}
-.charizard{
-position: absolute;
-bottom: 10px;
-width: 120px;
-right: -90px;
+    animation: fogo-animation 1.5s infinite linear;
+    margin: 20px;
+    display: none;
+    transition: all 1s ease-out;
 }
 
+.charizard {
+    position: absolute;
+    bottom: 0;
+    width: 170px;
+    right: -80px;
+}
+
+.red {
+    position: absolute;
+    width: 60px;
+    bottom: 0;
+    left: 80px;
+    transition: left 3s linear, bottom 1s ease-out;
+}
+
+.pokeball {
+    position: absolute;
+    width: 30px;
+    bottom: 70px;
+    right: 50px;
+    display: none;
+    z-index: 999;
+    transition: all 1s ease-out;
+}
+
+.jump {
+    animation: red-jump 500ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 10s infinite linear;
+}
+
+/* Estilo da Tela Inicial */
+.TelaComeco {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: white;
+}
+
+.TelaComeco p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.TelaComeco button {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.TelaComeco button:hover {
+    background-color: #218838;
+}
+
+/* Estilo para as telas de vitória e morte */
+.telaVitoria, .telaMorte {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.telaVitoria p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos botões nas telas de vitória e morte */
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    font-family: 'Press Start 2P', cursive;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Animações */
 @keyframes fogo-animation {
-    from{
+    from {
         right: 0;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes red-jump {
+    0% {
+        bottom: 10px;
+    }
+    40%, 50%, 60% {
+        bottom: 150px;
+    }
+    100% {
+        bottom: 10px;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -700px;
     }
     to {
         right: 100%;

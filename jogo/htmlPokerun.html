@@ -1,23 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>PokeRun Game</title>
     <link rel="stylesheet" href="./cssPokerun.css">
-    <script src="./scriptPokerun.js" defer> </script>
+    <link rel="icon" href="assets/icon/favicon2.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    
     <div class="game-board">
-
-        <img src="../img/fogo.png" class="fogo">
-
-
-        <a href="https://pokemondb.net/pokedex/charizard"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" class="charizard"></a>
+        <img src="../img/clouds.png" class="clouds">
+        <img src="../img/fogo.png" class="fogo" style="display: none;">
+        <img src="../img/red2.gif" class="red">
+        <img src="../img/pokebola.png" class="pokeball" style="display: none;">
+        <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" class="charizard">
     </div>
 
+    <!-- Tela de escolha antes do jogo começar -->
+    <div id="TelaComeco" class="TelaComeco">
+        <p>Deseja começar o jogo?</p>
+        <button onclick="comecar()" id="botaoComecar">Começar</button>
+        <button onclick="voltar()" id="botaoVoltar">Voltar</button>
+    </div>
 
+    <div id="telaVitoria" class="telaVitoria">
+        <p>Você Capturou o Charizard!</p>
+        <button id="botaoJogarVitoria" onclick="comecarDnv()">Jogar Novamente</button>
+        <button id="botaoVoltarVitoria" onclick="voltarDnv()">Voltar</button>
+    </div>
+
+    <div id="telaMorte" class="telaMorte">
+        <button id="botaoJogarMorte" onclick="comecarDnv()">Jogar Novamente</button>
+        <button id="botaoVoltarMorte" onclick="voltarDnv()">Voltar</button>
+    </div>
+
+    <script src="./scriptPokerun.js"></script>
 </body>
 </html>

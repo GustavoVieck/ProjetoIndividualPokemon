@@ -26,7 +26,7 @@ main {
 
 /* HEADER */
 .header {
-    background: linear-gradient(to top, #000000, #575757);
+    background: linear-gradient(to top, #000000, #1b1b1b);
     border-bottom: 1px solid var(--preto);
 
 }
@@ -36,7 +36,7 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
-
+    
     height: 80px;
 
 }
@@ -140,8 +140,9 @@ main {
 
 .sobre-nos {
     height: 400px;
-    width: 100%;
-  
+
+    display: flex;
+    align-items: center;
     padding: 20px;
     background-color: #f4f4f4;
     font-size: 18px;
@@ -153,16 +154,15 @@ main {
     background-attachment: fixed; 
     border-bottom: 1px solid var(--preto);
   }
-  .sobre-nos p{
-    width: 100%;
+  .sobre-nos h2{
+        align-self: flex-start;
+        
   }
 
 
 /* Estilo da seção "Como jogar" */
 .como-jogar {
-    height: 700px;
-    width: 100%;
-  
+    height: 700px;  
     padding: 20px;
     background-color: #f4f4f4;
     font-size: 18px;
@@ -195,4 +195,50 @@ main {
 
 .footer h2 {
     margin: 0;
+}
+
+/* Estilo da Modal */
+.modal {
+  display: none; /* Inicialmente escondido */
+  position: fixed; 
+  z-index: 1; /* Fica por cima de todo o conteúdo */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+  overflow: auto; /* Necessário para o modal se ajustar ao tamanho da tela */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ajuste a largura da modal */
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+/* Botão Específico */
+#startGameButton {
+  background-color: green;
+  color: white;
+}
+
+#backButton {
+  background-color: red;
+  color: white;
 }
