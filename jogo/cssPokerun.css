@@ -39,10 +39,14 @@ body {
 .red {
     position: absolute;
     width: 60px;
-    bottom: 0;
+    bottom: -5px;
     left: 80px;
     transition: left 3s linear, bottom 1s ease-out;
 }
+.jump {
+    animation: red-jump 500ms ease-out;
+}
+
 
 .pokeball {
     position: absolute;
@@ -54,17 +58,14 @@ body {
     transition: all 1s ease-out;
 }
 
-.jump {
-    animation: red-jump 500ms ease-out;
-}
 
 .clouds {
     position: absolute;
     width: 550px;
     animation: clouds-animation 10s infinite linear;
+    margin-top: 100px;
 }
 
-/* Estilo da Tela Inicial */
 .TelaComeco {
     position: fixed;
     top: 0;
@@ -104,29 +105,27 @@ body {
     background-color: #218838;
 }
 
-/* Estilo para as telas de vitória e morte */
-.telaVitoria, .telaMorte {
+.telaVitoria  {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    color: white;
 }
 
 .telaVitoria p {
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
-/* Estilo dos botões nas telas de vitória e morte */
-button {
+.telaVitoria button  {
     padding: 15px 30px;
     font-size: 16px;
     font-weight: bold;
@@ -137,17 +136,61 @@ button {
     cursor: pointer;
     margin: 10px;
     transition: background-color 0.3s ease;
+    display: block;
     font-family: 'Press Start 2P', cursive;
 }
 
-button:hover {
+.telaVitoria button:hover  {
     background-color: #218838;
 }
 
-/* Animações */
+.telaMorte{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: white;    
+}
+.telaMorte button{
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.telaMortebutton:hover {
+    background-color: #218838;
+}
+
+
 @keyframes fogo-animation {
     from {
         right: 0;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+
+@keyframes clouds-animation {
+    from {
+        right: -700px;
     }
     to {
         right: 100%;
@@ -163,14 +206,5 @@ button:hover {
     }
     100% {
         bottom: 10px;
-    }
-}
-
-@keyframes clouds-animation {
-    from {
-        right: -700px;
-    }
-    to {
-        right: 100%;
     }
 }

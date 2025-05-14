@@ -17,51 +17,53 @@ main {
     flex: 1;
 }
 
-/* Variáveis de cor */
 :root {
     --preto: #000000;
     --cinzaEscuro: hsl(0, 0%, 18%);
     --vermelho: #ff0000;
 }
 
-/* HEADER */
 .header {
-    background: linear-gradient(to top, #000000, #1b1b1b);
+    background: linear-gradient(to top, #e3e2e2, #ffffff);
     border-bottom: 1px solid var(--preto);
+    width: 100%;
+    height: 70px;
+    position: fixed;
 
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 50px;
     
-    height: 80px;
 
 }
 
-.titulo {
-    width: 100px;
-}
 
-/* NAVBAR */
+
 .navbar {
     display: flex;
     justify-content: space-between;
-    color: white;
+    color: black;
     list-style: none;
-    padding: 0;
-    margin: 0;
+  align-items: center;
+
     
+}
+.navbar .titulo{
+    width: 180px;
+    margin-right: 920px;
+    margin-top: 7px;
 }
 
 .navbar li {
     margin-left: 20px;
+    margin-top: 8px;
 }
 
 .navbar a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: large;
     transition: color 0.3s ease;
@@ -76,17 +78,15 @@ main {
     text-decoration: underline;
 }
 
-/* BANNER */
 .banner {
-    height: 700px;
+    height: 750px;
     width: 100%;
-    background: linear-gradient(to top, #ffffff, #fc8a43);
-    background-size: cover;        /* Cobre toda a tela */
-    background-position: center;   /* Centraliza */
-    background-repeat: no-repeat;  /* Não repete */
-    background-attachment: fixed; 
+    background-image: url(../img/backgroundSite.jpg);
+    background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat;  
     border-bottom: 1px solid var(--preto);
-  
+    background-size: 100%;
 }
 
 .banner .container {
@@ -96,32 +96,35 @@ main {
     align-items: center;
     
 }
-.banner span {
-    color: var(--vermelho);
-    font-weight: bold;}
 
-.banner .container p {
-    color: var(--preto);
-    font-size: 20px;
-    text-align: center;
-    margin-left: 80px;
-    
-}
+
 .conteudo-banner {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
     gap: 20px;
-    }
-   .banner .charizard {
-        position: absolute;
-        margin-top: 100px;  /* Distância do topo */
-        right: 80px;  /* Distância da direita */
-        width: 400px; /* Tamanho da imagem */
-        height: auto; /* Para manter a proporção da imagem */
+    background-color: rgba(255, 255, 255, 0.528);
+    width: 600px;
+    border-radius: 60px;
+    border: 2px solid #4993fa5f;
+    height: 250px;  
+    margin-top: 150px;
+    margin-left: 10px;
       }
+.conteudo-banner p {
+    color: black;
+    font-size: 20px;  
+    text-align: center;
+    display: flex;
+    margin-top: 75px;
+}
+.conteudo-banner span {
+  display: flex;
+    color: var(--vermelho);
+    font-weight: bold;
+  margin-right: 20px;}
  
-.banner .botao{
+.conteudo-banner .botao{
     padding: 12px 40px;
     background-color: var(--vermelho);
     color: white;
@@ -129,9 +132,6 @@ main {
     border-radius: 15px;
     font-size: 20px;
     cursor: pointer;
-    display: flex;
-    margin-left: 200px;
-    
 }
 .conteudo-banner p, 
 .conteudo-banner .botao {
@@ -146,99 +146,328 @@ main {
     padding: 20px;
     background-color: #f4f4f4;
     font-size: 18px;
-
-    background: linear-gradient(to top, #ffffff, #5093ff);
-    background-size: cover;        /* Cobre toda a tela */
-    background-position: center;   /* Centraliza */
-    background-repeat: no-repeat;  /* Não repete */
+background-color: white ;  
+  background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat;  
     background-attachment: fixed; 
     border-bottom: 1px solid var(--preto);
   }
   .sobre-nos h2{
         align-self: flex-start;
-        
+        margin-top: -20px;
   }
 
 
-/* Estilo da seção "Como jogar" */
 .como-jogar {
     height: 700px;  
     padding: 20px;
     background-color: #f4f4f4;
     font-size: 18px;
     border-radius: 8px;
-    background: linear-gradient(to top, #ffffff, #50ff5c);
-    background-size: cover;        /* Cobre toda a tela */
-    background-position: center;   /* Centraliza */
-    background-repeat: no-repeat;  /* Não repete */
+    background-color: white;
+    background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat;  
     background-attachment: fixed; 
   }
-
-
-/* FOOTER */
-.footer {
-    height: 150px;
+  .footer {
     width: 100%;
-    background-color: var(--preto);
+    background-color: var(--preto, #111);
+    color: white;
     font-family: monospace;
-}
-
-.footer .container {
-    width: 100%;
-    height: 150px;
+    padding: 40px 0 20px;
+    border-top: 2px solid #333;
+  }
+  
+  .footer .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-.footer h2 {
+    gap: 20px;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer-brand h2 {
     margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  .footer-brand p {
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .footer-links,
+  .footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .footer-links a{
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--accent, #ff0000);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+  }
+
+.login {
+ background-color: #777877;
 }
 
-/* Estilo da Modal */
-.modal {
-  display: none; /* Inicialmente escondido */
-  position: fixed; 
-  z-index: 1; /* Fica por cima de todo o conteúdo */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
-  overflow: auto; /* Necessário para o modal se ajustar ao tamanho da tela */
+.login .container{
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  display: flex;
+
 }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Ajuste a largura da modal */
+
+.card {
+  width: 50%;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: var(--preto);
+  flex-direction: column;
+  height: 50%;
+  padding: 20px 0;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 20px;
+  font-family: monospace
+}
+
+
+.formulario {
+  display: flex;
+  height: 90%;  
+  width: 80%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.formulario span {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.formulario input {
+  border: 1px solid #222222;
   text-align: center;
+  border-radius: 10px;
+  margin: 0;
+  height: 150px;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
+
+
+
+.card .campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 5px 0;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.card .botao {
   cursor: pointer;
-  margin: 10px;
-  border-radius: 5px;
+  font-family: monospace;
   border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 28px;
+  color: #fff;
+  background-color: var(--vermelho);
+  width: 200px;
+  height: 50px;
+  align-self: center;
+  margin-top: 20px;
 }
 
-button:hover {
-  background-color: #ccc;
+.container span{
+color: var(--vermelho)  ;
 }
 
-/* Botão Específico */
-#startGameButton {
-  background-color: green;
-  color: white;
+.card-cadastro{
+  width: 50%;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: var(--preto);
+  flex-direction: column;
+  height: 60%;
+  padding: 20px 0; 
 }
 
-#backButton {
-  background-color: red;
-  color: white;
+
+.card-cadastro h2 {
+  margin: 0;
+  font-size: 20px;
+  font-family: monospace
+}
+
+
+.formulario {
+  display: flex;
+  height: 90%;
+  width: 80%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.formulario span {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.formulario input {
+  border: 1px solid #222222;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0;
+  height: 150px;
+}
+
+
+
+
+.card-cadastro .campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 5px 0;
+  height: 50px;
+}
+
+.card-cadastro .botao {
+  cursor: pointer;
+  font-family: monospace;
+  border: 0;
+  border-radius: 29px;
+  font-weight: 600;
+  font-size: 26px;
+  color: #fff;
+  background-color: var(--vermelho);
+  width: 200px;
+  height: 50px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+
+.como-jogar {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+  font-family: monospace;
+  height: 450px;
+  flex-wrap: wrap;
+}
+
+.como-jogar h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-family: 'Press Start 2P', cursive;
+  color: var(--vermelho);
+  
+}
+
+.etapas {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+}
+
+.etapa {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+
+}
+
+
+.etapa img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.etapa h3 {
+  margin: 10px 0 10px;
+  font-size: 1.2rem;
+}
+
+.etapa p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+
+.sobre-nos {
+  padding: 60px 20px;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: monospace;
+  color: var(--preto);
+  gap: 20px; 
+}
+
+.sobre-nos .container {
+  width: 800px;
+  left: 10px;
+  margin-left: 20px;
+}
+
+.sobre-nos h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: var(--vermelho);
+  font-family: 'Press Start 2P', cursive;
+}
+
+.sobre-nos p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.sobre-nos img {
+  width: 450px;
+  height: 420px;
+  margin-left: 150px;
+  border-radius: 16px;
 }

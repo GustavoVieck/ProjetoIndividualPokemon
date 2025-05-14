@@ -13,67 +13,80 @@
 </head>
 
 <body>
-  <!-- Cabeçalho -->
-  <div class="header">
+<div class="header">
     <div class="container">
-      <img src="../img/logo.png" class="titulo">
       <ul class="navbar">
-        <li>
-          <a href="home.html">Home</a></li>
+              <img src="../img/Made with insMind-logoVieck.png" class="titulo">
+        <li ><a href="index.html">Início</a></li>
         <li>|</li>
         <li><a href="login.html">Login</a></li>
         <li class="agora"><a href="cadastro.html">Cadastro</a></li>
       </ul>
     </div>
   </div>
-
-  <!-- Conteúdo principal -->
-  <main>
-    <div class="banner">
-      <div class="container">
-        <div class="campo">
-          <span>Código de ativação:</span>
-          <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-        </div>
-        <div class="campo">
-          <span>Nome:</span>
-          <input id="nome_input" type="text" placeholder="Seu nome" />
-        </div>
-        <div class="campo">
-          <span>E-mail:</span>
-          <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
-        </div>
-        <div class="campo">
-          <span>Senha:</span>
-          <input id="senha_input" type="password" placeholder="******" />
-        </div>
-        <div class="campo">
-          <span>Confirmação da Senha:</span>
-          <input id="confirmacao_senha_input" type="password" placeholder="******" />
-        </div>
-        <div class="campo">
-          <span>CPF:</span>
-          <input id="cpf_input" type="text" placeholder="XXX.XXX.XXX-XX" />
-        </div>
-        <button class="botao" onclick="cadastrar()">Cadastrar</button>
-      </div>
-      </div>
-
   
-
-  </main>
-
-  <!-- Rodapé -->
-  <div class="footer">
+  <main>
+    
+  <div class="login">
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
     <div class="container">
-      <h2>POKERUN 2025</h2>
+      <div class="card-cadastro">
+        <h2>Bem-vindo treinador!</h2>
+        <div class="formulario">
+          <div class="campo">
+            <span>Nome:</span>
+            <input id="nome_input" type="text" placeholder="Seu nome" />
+          </div>
+          <div class="campo">
+            <span>E-mail:</span>
+            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+          </div>
+          <div class="campo">
+            <span>Senha:</span>
+            <input id="senha_input" type="password" placeholder="******" />
+          </div>
+          <div class="campo">
+            <span>Confirmação da Senha:</span>
+            <input id="confirmacao_senha_input" type="password" placeholder="******" />
+          </div>
+          <button class="botao" onclick="cadastrar()">Cadastrar</button>
+
+        </div>
+        <br>
+        <div style="font-size: 15PX;">Já tem conta? <span onclick="location.href='../website/login.html'" style="cursor: pointer;">Logar</span></div>
+
+      </div>
     </div>
   </div>
+  </main>
+ <div class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h2>Vieckemon</h2>
+            <p>Uma dose de nostalgia!</p>
+          </div>
+          <div class="footer-links">
+            <a href="../webSite/index.html">Início</a>
+            <a href="../webSite/index.html">Sobre Nós</a>
+          </div>
+
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 PokeRun. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+
 </body>
 
 </html>
 <script>
-  function jogar(){
+  function cadastrar(){
    
 
   }
