@@ -4,7 +4,6 @@
 html, body {
     height: 100%;
     margin: 0;
- /* Fundo fixo quando rola */
 }
 
 body {
@@ -36,7 +35,7 @@ main {
     display: flex;
     justify-content: space-between;
     padding: 0 50px;
-    
+  user-select: none;    
 
 }
 
@@ -85,7 +84,7 @@ main {
     background-size: cover;        
     background-position: center;   
     background-repeat: no-repeat;  
-    border-bottom: 1px solid var(--preto);
+    border-bottom: 2px solid var(--preto);
     background-size: 100%;
 }
 
@@ -103,10 +102,8 @@ main {
     flex-direction:column;
     align-items: center;
     gap: 20px;
-    background-color: rgba(255, 255, 255, 0.528);
     width: 600px;
-    border-radius: 60px;
-    border: 2px solid #4993fa5f;
+
     height: 250px;  
     margin-top: 150px;
     margin-left: 10px;
@@ -117,12 +114,17 @@ main {
     text-align: center;
     display: flex;
     margin-top: 75px;
+    user-select: none;
+     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.81);
+
 }
 .conteudo-banner span {
   display: flex;
     color: var(--vermelho);
     font-weight: bold;
-  margin-right: 20px;}
+  margin-right: 20px;
+  text-shadow: 0 4px 12px rgba(191, 59, 59, 0.81);
+}
  
 .conteudo-banner .botao{
     padding: 12px 40px;
@@ -132,7 +134,17 @@ main {
     border-radius: 15px;
     font-size: 20px;
     cursor: pointer;
+      transition: color 0.3s;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.81);
+
+
 }
+.conteudo-banner .botao:hover {
+  background-color: rgb(255, 0, 0);
+  color: rgb(0, 0, 0);
+
+}
+
 .conteudo-banner p, 
 .conteudo-banner .botao {
     font-family: 'Press Start 2P', cursive;
@@ -140,36 +152,37 @@ main {
 
 .sobre-nos {
     height: 400px;
-
+    user-select: none;
     display: flex;
     align-items: center;
     padding: 20px;
     background-color: #f4f4f4;
     font-size: 18px;
-background-color: white ;  
+background-image: url(../img/pikachu_wallpaper_no_spacing_1920x1080.png);  
   background-size: cover;        
     background-position: center;   
     background-repeat: no-repeat;  
-    background-attachment: fixed; 
-    border-bottom: 1px solid var(--preto);
+    border-bottom: 2px solid var(--preto);
   }
   .sobre-nos h2{
         align-self: flex-start;
         margin-top: -20px;
   }
+  
 
 
 .como-jogar {
     height: 700px;  
     padding: 20px;
-    background-color: #f4f4f4;
+    background-image: url(../img/pikachu_wallpaper_no_spacing_1920x1080.png);
     font-size: 18px;
     border-radius: 8px;
     background-color: white;
     background-size: cover;        
     background-position: center;   
     background-repeat: no-repeat;  
-    background-attachment: fixed; 
+    user-select: none;
+    
   }
   .footer {
     width: 100%;
@@ -187,6 +200,7 @@ background-color: white ;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    user-select: none;
   }
   
   .footer-top {
@@ -234,21 +248,21 @@ background-color: white ;
   }
 
 .login {
- background-color: #777877;
-}
+background-image: url(../img/pikachu_wallpaper_no_spacing_1920x1080.png);}
 
 .login .container{
   justify-content: center;
   align-items: center;
   height: 800px;
   display: flex;
+    user-select: none;
 
 }
 
 
 .card {
   width: 50%;
-  background-color: #e5e5e5;
+  background-color:rgb(255, 255, 255);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -257,12 +271,14 @@ background-color: white ;
   flex-direction: column;
   height: 50%;
   padding: 20px 0;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.81);
+     font-family: sans-serif
 }
 
 .card h2 {
   margin: 0;
-  font-size: 20px;
-  font-family: monospace
+  font-size: 25px;
+  margin-top: 15px;
 }
 
 
@@ -285,7 +301,18 @@ background-color: white ;
   margin: 0;
   height: 150px;
 }
+.formulario input::placeholder {
+    padding: 8px;
+    margin-bottom: 10px;
+    margin-left: 525px;
 
+}
+.formulario .input_email::placeholder {
+    padding: 8px;
+    margin-bottom: 10px;
+    margin-left: 480px;
+
+}
 
 
 
@@ -304,13 +331,21 @@ background-color: white ;
   border: none;
   border-radius: 30px;
   font-weight: 600;
-  font-size: 28px;
-  color: #fff;
-  background-color: var(--vermelho);
-  width: 200px;
+  font-size: 20px;
+  color: #ff0000;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid red;
+  width: 250px;
   height: 50px;
   align-self: center;
   margin-top: 20px;
+  transition: background-color 0.3s;
+  
+}
+.card .botao:hover {
+  background-color: rgb(254, 17, 17);
+  color: white;
+
 }
 
 .container span{
@@ -319,7 +354,7 @@ color: var(--vermelho)  ;
 
 .card-cadastro{
   width: 50%;
-  background-color: #e5e5e5;
+  background-color: #ffffff;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -328,13 +363,19 @@ color: var(--vermelho)  ;
   flex-direction: column;
   height: 60%;
   padding: 20px 0; 
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.81);
+   user-select: none;
+   font-family: sans-serif;
+
+
 }
 
 
 .card-cadastro h2 {
   margin: 0;
-  font-size: 20px;
+  font-size: 25px;
   font-family: monospace
+
 }
 
 
@@ -372,16 +413,24 @@ color: var(--vermelho)  ;
 .card-cadastro .botao {
   cursor: pointer;
   font-family: monospace;
-  border: 0;
-  border-radius: 29px;
+  border: none;
+  border-radius: 30px;
   font-weight: 600;
-  font-size: 26px;
-  color: #fff;
-  background-color: var(--vermelho);
-  width: 200px;
+  font-size: 20px;
+  color: #ff0000;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid red;
+  width: 250px;
   height: 50px;
   align-self: center;
   margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.card-cadastro .botao:hover {
+  background-color: rgb(254, 17, 17);
+  color: white;
+
 }
 
 
@@ -399,7 +448,8 @@ color: var(--vermelho)  ;
   margin-bottom: 40px;
   font-family: 'Press Start 2P', cursive;
   color: var(--vermelho);
-  
+  text-shadow: 0 4px 12px rgba(191, 59, 59, 0.81);
+
 }
 
 .etapas {
@@ -414,8 +464,9 @@ color: var(--vermelho)  ;
   border-radius: 15px;
   padding: 20px;
   width: 250px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.81);
 
-}
+  }
 
 
 .etapa img {
@@ -457,6 +508,7 @@ color: var(--vermelho)  ;
   margin-bottom: 30px;
   color: var(--vermelho);
   font-family: 'Press Start 2P', cursive;
+  text-shadow: 0 4px 12px rgba(191, 59, 59, 0.81);
 }
 
 .sobre-nos p {
@@ -470,4 +522,6 @@ color: var(--vermelho)  ;
   height: 420px;
   margin-left: 150px;
   border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.81);
+
 }
