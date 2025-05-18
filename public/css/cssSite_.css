@@ -22,43 +22,51 @@ main {
     --vermelho: #ff0000;
 }
 
+
 .header {
     background: linear-gradient(to top, #e3e2e2, #ffffff);
     border-bottom: 1px solid var(--preto);
-    width: 100%;
-    height: 70px;
     position: fixed;
+    width: 100%;
 
 }
 
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 50px;
+.hearder .container {
+  display: flex;
+  margin: auto;
+      padding: 0 20px;
+  height: 100%;
   user-select: none;    
+  align-items: center;
 
 }
-
 
 
 .navbar {
     display: flex;
-    justify-content: space-between;
     color: black;
     list-style: none;
   align-items: center;
-
+justify-content: space-between;
     
+}
+.container .itens{
+  display: flex;
+    align-items: center;
+  gap: 22px;
+  justify-content: space-between;
+  padding: 0 40px;
+  
 }
 .navbar .titulo{
     width: 180px;
-    margin-right: 920px;
     margin-top: 7px;
+    justify-content: start;
 }
-
 .navbar li {
-    margin-left: 20px;
+  margin-left: 1% ;
     margin-top: 8px;
+    
 }
 
 .navbar a {
@@ -80,7 +88,7 @@ main {
 .banner {
     height: 750px;
     width: 100%;
-    background-image: url(../img/backgroundSite.jpg);
+    background-image: url(../assets/backgroundSite.jpg);
     background-size: cover;        
     background-position: center;   
     background-repeat: no-repeat;  
@@ -150,31 +158,13 @@ main {
     font-family: 'Press Start 2P', cursive;
 }
 
-.sobre-nos {
-    height: 400px;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background-color: #f4f4f4;
-    font-size: 18px;
-background-image: url(../img/pikachu_wallpaper_no_spacing_1920x1080.png);  
-  background-size: cover;        
-    background-position: center;   
-    background-repeat: no-repeat;  
-    border-bottom: 2px solid var(--preto);
-  }
-  .sobre-nos h2{
-        align-self: flex-start;
-        margin-top: -20px;
-  }
   
 
 
 .como-jogar {
-    height: 700px;  
+    height: 100%;  
     padding: 20px;
-    background-image: url(../img/pikachu_wallpaper_no_spacing_1920x1080.png);
+    background-image: url(../assets/pikachu_wallpaper_no_spacing_1920x1080.png);
     font-size: 18px;
     border-radius: 8px;
     background-color: white;
@@ -194,7 +184,7 @@ background-image: url(../img/pikachu_wallpaper_no_spacing_1920x1080.png);
   }
   
   .footer .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: auto;
     display: flex;
@@ -248,7 +238,7 @@ background-image: url(../img/pikachu_wallpaper_no_spacing_1920x1080.png);
   }
 
 .login {
-background-image: url(../img/pikachu_wallpaper_no_spacing_1920x1080.png);}
+background-image: url(../assets/pikachu_wallpaper_no_spacing_1920x1080.png);}
 
 .login .container{
   justify-content: center;
@@ -299,18 +289,19 @@ background-image: url(../img/pikachu_wallpaper_no_spacing_1920x1080.png);}
   text-align: center;
   border-radius: 10px;
   margin: 0;
-  height: 150px;
+    height: 150px;
+    
 }
 .formulario input::placeholder {
     padding: 8px;
-    margin-bottom: 10px;
-    margin-left: 525px;
+    margin-bottom: 50%;
+    margin-left: 90%;
 
 }
 .formulario .input_email::placeholder {
     padding: 8px;
-    margin-bottom: 10px;
-    margin-left: 480px;
+    margin-bottom: 50%;
+    margin-left: 83%;
 
 }
 
@@ -343,7 +334,7 @@ background-image: url(../img/pikachu_wallpaper_no_spacing_1920x1080.png);}
   
 }
 .card .botao:hover {
-  background-color: rgb(254, 17, 17);
+  background-color: rgb(255, 0, 0);
   color: white;
 
 }
@@ -392,9 +383,9 @@ color: var(--vermelho)  ;
 }
 
 .formulario input {
-  border: 1px solid #222222;
+  border: 2px solid #222222;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 15px;
   margin: 0;
   height: 150px;
 }
@@ -407,7 +398,7 @@ color: var(--vermelho)  ;
   flex-direction: column;
   justify-content: start;
   padding: 5px 0;
-  height: 50px;
+  height: 60px;
 }
 
 .card-cadastro .botao {
@@ -428,7 +419,7 @@ color: var(--vermelho)  ;
 }
 
 .card-cadastro .botao:hover {
-  background-color: rgb(254, 17, 17);
+  background-color: rgb(255, 0, 0);
   color: white;
 
 }
@@ -488,7 +479,7 @@ color: var(--vermelho)  ;
 
 .sobre-nos {
   padding: 60px 20px;
-  background-color: white;
+  background-image: url(../assets/pikachu_wallpaper_no_spacing_1920x1080.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -498,9 +489,12 @@ color: var(--vermelho)  ;
 }
 
 .sobre-nos .container {
-  width: 800px;
+  width: 100%;
   left: 10px;
   margin-left: 20px;
+  display: flex;
+
+
 }
 
 .sobre-nos h2 {
@@ -518,10 +512,32 @@ color: var(--vermelho)  ;
 }
 
 .sobre-nos img {
+  position: flex;
   width: 450px;
   height: 420px;
-  margin-left: 150px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.81);
 
+}
+
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #fff;
+  color: black;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #ED145B 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+  font-weight: 500;
+  font-size: 20px;
 }
