@@ -43,7 +43,7 @@ function comecar() {
     red.style.left = '80px';
     red.style.bottom = '0';
     red.style.width = '60px';
-    red.src = '../img/red2.gif';
+    red.src = '../assets/red2.gif';
     comecouJogo = true;
     morreuJogo = false;
     vitoriaJogo = false;
