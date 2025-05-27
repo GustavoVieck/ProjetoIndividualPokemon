@@ -2,11 +2,28 @@
 function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
-
-    var b_usuario = document.getElementById("b_usuario");
+    const pontuacao = document.getElementById('pontuacao');
+    const pontuacao2 = document.getElementById('pontuacao2')
 
     if (email != null && nome != null) {
-        b_usuario.innerHTML = nome;
+        document.getElementById('login').innerHTML = `<li ><img style="width:24px;" src="assets/iconPerfil.png"></li>${nome} <li ><img  style="width:28px;cursor:pointer;" src="assets/voltar.png"  onclick="sair()" ></li>`
+        pontuacao.style.display = 'block';
+        pontuacao2.style.display = 'block';
+    
+    } else {
+        // window.location = "../login.html";
+            document.getElementById('login').innerHTML = ` <li><a href="login.html" >Login</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>`
+    }
+}
+
+function validarSessaoJogo(){
+    var email = sessionStorage.EMAIL_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
+
+
+    if (email != null && nome != null) {
+        console.log('usuarioLogado')
     } else {
         window.location = "../login.html";
     }

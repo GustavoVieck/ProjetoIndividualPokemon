@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta  name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Página Inicial</title>
   <link rel="stylesheet" href="css/cssSite_.css" />
+  <script src="./js/sessao.js"></script>
   <link rel="icon" href="assets/icon/favicon2.ico" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -19,13 +20,12 @@
       <ul class="navbar">
         <img src="assets/Made with insMind-logoVieck.png" class="titulo" >
         <div class="itens">
-        <li ><a  href="index.html">Início</a></li>
-          <li><a href="sobre.html"  >Sobre</a></li>
-                        <li ><a onclick="ir()" href="./dashboard/cards.html">Pontuação</a></li>
+        <li  class="agora" ><a  href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Mim</a></li>
+          <li id="pontuacao" style="display: none"><a href="./dashboard/cards.html" ;>Pontuação</a></li>
         <li>|</li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        </div>
+             <div  id="login" class="cadastro">
+          </div>
       </ul>
     </div>
   </div>
@@ -36,14 +36,14 @@
 
         <div class="conteudo-banner">
           <p><span>POKERUN</span> EU ESCOLHO VOCÊ!</p>    
-        <button class="botao" onclick="location.href='jogo/htmlPokerun.html'">JOGAR</button>  
+        <a class="botao" href='jogo/htmlPokerun.html'>JOGAR</a>  
     </div>
     
     </div>
       </div>
  
 
-
+      
 
       <div class="como-jogar">
       <h2>Como Jogar</h2>
@@ -83,9 +83,9 @@
             <p>Uma dose de nostalgia!</p>
           </div>
           <div class="footer-links">
-            <a href="webSite/index.html">Início</a>
-            <a href="webSite/index.html">Sobre Nós</a>
-            <a href="webSite/index.html">Como Jogar</a>
+            <a href="./index.html">Início</a>
+            <a href="./sobre.html">Sobre Mim</a>
+            <a id="pontuacao2" href="./dashboard/cards.html" style="display: none;">Pontuação</a>
 
           </div>
 
@@ -99,3 +99,11 @@
 
 
 </html>
+<script>
+ function sair(){
+  limparSessao() 
+ }
+
+ validarSessao()
+ 
+</script>

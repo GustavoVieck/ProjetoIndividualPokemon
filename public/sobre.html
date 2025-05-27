@@ -1,38 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      <link rel="stylesheet" href="css/cssSite_.css" />
+<html lang="pt-BR">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta  name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="css/cssSite_.css" />
+  <script src="./js/sessao.js"></script>
+  <link rel="icon" href="assets/icon/favicon2.ico" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
-<body>
     
-<div class="header">
+ <div class="header">
     <div class="container">
       <ul class="navbar">
         <img src="assets/Made with insMind-logoVieck.png" class="titulo" >
         <div class="itens">
-        <li ><a  href="index.html">Início</a></li>
-          <li><a href="index.html"  >Sobre</a></li>
-                        <li ><a onclick="ir()" href="./dashboard/cards.html" >Pontuação</a></li>
+        <li ><a   href="index.html">Início</a></li>
+          <li class="agora"><a  href="sobre.html">Sobre Mim</a></li>
+          <li id="pontuacao" style="display: none"><a href="./dashboard/cards.html" ;>Pontuação</a></li>
         <li>|</li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        </div>
+             <div  id="login" class="cadastro">
+          </div>
       </ul>
     </div>
   </div>
   
-          <div>
+  
           <div class="sobre-nos">
         <div class="container">
             <h2>Sobre Nós(Gustavo Vieck)</h2>
-            <p>Pokémon foi uma franquia muito presente na minha infância, tanto os jogos quanto os animes.</p>
-            <p>Querendo reviver a nostalgia de Pokémon, nós a <strong>Vieckemon</strong> criamos um jogo simples e divertido chamado <strong>PokeRun</strong>, para que nossos jogadores consigam ter a experiência única desse universo gigantesco e único.</p>
+            <p>>Pokémon foi uma franquia muito presente na minha infância, tanto os jogos quanto os animes.<br>
+            Querendo reviver a nostalgia de Pokémon, nós a <strong>Vieckemon</strong> criamos um jogo simples e divertido chamado <strong>PokeRun</strong>, para que nossos jogadores consigam ter a experiência única desse universo gigantesco e único.</p>
+                    <img src="assets/amigos.jpg">
+
         </div>
-        <img src="assets/amigos.jpg">
       </div>
+
+
+        <div class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h2>Vieckemon</h2>
+            <p>Uma dose de nostalgia!</p>
+          </div>
+          <div class="footer-links">
+            <a href="./index.html">Início</a>
+            <a href="./index.html">Sobre Mim</a>
+            <a id="pontuacao2" href="./dashboard/cards.html" style="display: none;">Pontuação</a>
+
+          </div>
+
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 PokeRun. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>
+<script>
+  validarSessao()
+</script>

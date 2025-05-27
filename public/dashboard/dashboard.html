@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+      <script src="./js/sessao.js"></script>
+    <title>Vieckemon | Pontos Usuário</title>
 
     
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
-    <script src="./../js/alerta.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -52,7 +52,7 @@
 
         
 
-      <img onclick="limparSessao()" src="../assets/voltar.png" alt="voltar" class="btn-logout">
+      <a href="../index.html"><img src="../assets/voltar.png" alt="voltar" class="btn-logout"></a>
 
 
         </div>
@@ -310,4 +310,7 @@
             });
 
     }
+</script>
+<script>
+        validarSessao()
 </script>

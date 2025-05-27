@@ -136,7 +136,7 @@ body {
 }
 
 .area-parametros-alerta .titulo-legenda {
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: 600;
   width: fit-content;
   margin: 10px 20px;
@@ -429,5 +429,5 @@ font-family: monospace;
   padding: 10px 15px;
   margin-bottom: 30px;
   cursor: pointer;
-
+  margin-left: 100px;
 }

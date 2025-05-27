@@ -53,19 +53,55 @@ justify-content: space-between;
 .container .itens{
   display: flex;
     align-items: center;
-  gap: 22px;
+  gap: 25px;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 20px;
    user-select: none;  
-  
+    font-weight: bold;
+
+}
+.perfil{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 5px;
+  display: none;
+   width: 20px;
+}
+
+.perfil1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 5px;
+  display: none;
+   width: 25px;
+}
+
+
+.cadastro{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  font-size: 20px;
+}
+
+.container .login{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
 }
 .navbar .titulo{
     width: 180px;
     margin-top: 7px;
     justify-content: start;
 }
-.navbar li {
-  margin-left: 1% ;
+.navbar  li{
+  margin-left: -1% ;
     margin-top: 8px;
     
 }
@@ -144,7 +180,7 @@ justify-content: space-between;
     cursor: pointer;
       transition: color 0.3s;
        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.81);
-
+  text-decoration: none;
 
 }
 .conteudo-banner .botao:hover {
@@ -292,18 +328,7 @@ background-image: url(../assets/pikachu_wallpaper_no_spacing_1920x1080.png);}
     height: 150px;
     
 }
-.formulario input::placeholder {
-    padding: 8px;
-    margin-bottom: 50%;
-    margin-left: 90%;
 
-}
-.formulario .input_email::placeholder {
-    padding: 8px;
-    margin-bottom: 50%;
-    margin-left: 83%;
-
-}
 
 
 
@@ -332,6 +357,7 @@ background-image: url(../assets/pikachu_wallpaper_no_spacing_1920x1080.png);}
   margin-top: 20px;
   transition: background-color 0.3s;
   
+  
 }
 .card .botao:hover {
   background-color: rgb(255, 0, 0);
@@ -358,14 +384,13 @@ color: var(--vermelho)  ;
    user-select: none;
    font-family: sans-serif;
 
-
 }
 
 
 .card-cadastro h2 {
   margin: 0;
   font-size: 25px;
-  font-family: monospace
+  font-family: monospace;
 
 }
 
@@ -485,16 +510,13 @@ color: var(--vermelho)  ;
   background-repeat: no-repeat;
   font-family: monospace;
   color: var(--preto);
-  gap: 20px; 
 }
 
 .sobre-nos .container {
   width: 100%;
-  left: 10px;
-  margin-left: 20px;
+  height: 800px;
   display: flex;
-
-
+  padding: 10px 10px;
 }
 
 .sobre-nos h2 {
@@ -502,12 +524,13 @@ color: var(--vermelho)  ;
   color: var(--vermelho);
   font-family: 'Press Start 2P', cursive;
   text-shadow: 0 4px 12px rgba(191, 59, 59, 0.81);
+  justify-content: center;
 }
 
 .sobre-nos p {
   font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 15px;
+  line-height: 1.3;
+  
 }
 
 .sobre-nos img {

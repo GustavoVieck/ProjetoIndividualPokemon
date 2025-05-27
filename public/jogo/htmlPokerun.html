@@ -8,33 +8,44 @@
     <link rel="icon" href="assets/icon/favicon2.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="../js/sessao.js"> </script>
 </head>
 <body>
     <div class="game-board">
-        <img src="../assets/clouds.png" class="clouds">
+            <div class="chao"></div>
+        <div id="div_pontos" class="pontos">Pontos: 0</div>
+        <img src="../assets/clouds.png" class="clouds" style="display: none;">
         <img src="../assets/fogo.png" class="fogo" style="display: none;">
-        <img src="../assets/red.gif" class="red">
+        <img src="" class="berry">
+        <img src="../assets/redParado_transparente.png" class="red">
+        <div id="pontuacaoFlutuante" style="display: none;">+0</div>
         <img src="../assets/pokebola.png" class="pokeball" style="display: none;">
- <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" class="charizard">
+ <img src="../assets/charizardParado.png" class="charizard">
 
     </div>
 
     <div id="TelaComeco" class="TelaComeco">
         <p>Deseja começar o jogo?</p>
-        <button onclick="comecar()" id="botaoComecar">Começar</button>
-        <button onclick="voltar()" id="botaoVoltar">Voltar</button>
+ <button id="botaoComecar">Começar</button>
+ <button id="botaoVoltar">Voltar</button>
     </div>
 
     <div id="telaVitoria" class="telaVitoria" style="display: none;">
         <p>Você Capturou o Charizard!</p>
-        <button id="botaoJogarVitoria" onclick="comecarDnv()">Jogar Novamente</button>
-        <button id="botaoVoltarVitoria" onclick="voltarDnv()">Voltar</button>
+        <br><br>
+      <button id="botaoJogarVitoria">Jogar Novamente</button>
+<button id="botaoVoltarVitoria">Voltar</button>
     </div>
 
     <div id="telaMorte" class="telaMorte" style="display: none;">
-        <button id="botaoJogarMorte" onclick="comecarDnv()">Jogar Novamente</button>
-        <button id="botaoVoltarMorte" onclick="voltarDnv()">Voltar</button>
+        <p>Você morreu, mas não desista!</p>
+          <br> <br>
+       <button id="botaoJogarMorte">Jogar Novamente</button>
+<button id="botaoVoltarMorte">Voltar</button>
     </div>
 </body>
 </html>
 <script src="./scriptPokerun.js"></script>
+<script>
+    validarSessaoJogo()
+</script>

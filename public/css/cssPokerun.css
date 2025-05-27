@@ -12,11 +12,46 @@ body {
 .game-board {
     width: 100%;
     height: 730px;
-    border-bottom: 15px solid #1dc614;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
+    padding-top: 20px;
+}
+
+.chao {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px; 
+    background: linear-gradient(#1adb00, #1a7700);
+    z-index: 0;
+}
+
+.pontos{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 3px 1px 2px rgb(0, 0, 0);
+    user-select: none;
+    right: 45%;
+    color: rgb(255, 13, 13);
+    }
+
+#pontuacaoFlutuante {
+    position: absolute;
+    color: rgb(0, 255, 0);
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px black;
+    animation: flutuar 1s ease-out forwards;
+    pointer-events: none;
+    font-family: 'Press Start 2P', cursive;
+    z-index: 4;
 }
 
 .fogo {
@@ -27,21 +62,35 @@ body {
     margin: 20px;
     display: none;
     transition: all 1s ease-out;
+    user-select: none;
 }
+.berry {
+  position: absolute; 
+  bottom: 120px;         
+  width: 40px;        
+  height: 40px;
+  animation: berry-animation 5s linear infinite;
+  z-index: 5;
+  display: none;
+    user-select: none;
+}
+
 
 .charizard {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     width: 170px;
     right: -80px;
+    user-select: none;
 }
 
 .red {
     position: absolute;
     width: 60px;
-    bottom: -5px;
+    bottom: 1%;
     left: 80px;
     transition: left 3s linear, bottom 1s ease-out;
+    user-select: none;
 }
 .jump {
     animation: red-jump 500ms ease-out;
@@ -49,21 +98,24 @@ body {
 
 
 .pokeball {
+    margin-right: 170px;
     position: absolute;
     width: 30px;
-    bottom: 70px;
-    right: 50px;
+    bottom: 80px;
+    right: 20px;
     display: none;
     z-index: 999;
     transition: all 1s ease-out;
+    user-select: none;
 }
 
 
 .clouds {
     position: absolute;
-    width: 550px;
+    width: 450px;
     animation: clouds-animation 10s infinite linear;
     margin-top: 100px;
+    user-select: none;
 }
 
 .TelaComeco {
@@ -84,6 +136,7 @@ body {
 .TelaComeco p {
     font-size: 20px;
     margin-bottom: 20px;
+    user-select: none;
 }
 
 .TelaComeco button {
@@ -99,6 +152,7 @@ body {
     transition: background-color 0.3s ease;
     display: block;
     font-family: 'Press Start 2P', cursive;
+    user-select: none;
 }
 
 .TelaComeco button:hover {
@@ -123,6 +177,7 @@ body {
 .telaVitoria p {
     font-size: 20px;
     margin-bottom: 20px;
+    user-select: none;
 }
 
 .telaVitoria button  {
@@ -138,6 +193,7 @@ body {
     transition: background-color 0.3s ease;
     display: block;
     font-family: 'Press Start 2P', cursive;
+    user-select: none;
 }
 
 .telaVitoria button:hover  {
@@ -158,6 +214,12 @@ body {
     z-index: 1000;
     color: white;    
 }
+.telaMorte p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
 .telaMorte button{
     padding: 15px 30px;
     font-size: 16px;
@@ -171,6 +233,7 @@ body {
     transition: background-color 0.3s ease;
     display: block;
     font-family: 'Press Start 2P', cursive;
+    user-select: none;
 }
 
 .telaMortebutton:hover {
@@ -206,5 +269,25 @@ body {
     }
     100% {
         bottom: 10px;
+    }
+}
+@keyframes berry-animation {
+  0% {
+    left: 100%; 
+  }
+  100% {
+    left: -50%;  
+  }
+}
+
+
+@keyframes flutuar {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
     }
 }
