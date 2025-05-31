@@ -133,28 +133,38 @@ body {
   margin: auto;
   margin-top: 10px;
   background-image: url(../assets/pikachu_wallpaper_no_spacing_1920x1080.png);
+  margin-left: 12vw;
 }
 
-.area-parametros-alerta .titulo-legenda {
+.titulo-legenda {
   color: rgb(0, 0, 0);
   font-weight: 600;
   width: fit-content;
   margin: 10px 20px;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 2px 2px 0 rgb(173, 173, 173);
+  font-size: 24px;
+  margin-left: 23vw;
 }
 
-.parametros-alerta {
+.parametros-rank {
   display: flex;
   width: 100%;
+  gap: 100px;
 }
 
 .item-regua {
-  width: 20%;
+  width: 22%;
   text-align: center;
   height: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-self: center;
+  border-radius: 15px;
+  box-shadow: 4px 4px 0 black;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
 }
 
 .item-regua p {
@@ -167,33 +177,33 @@ body {
 }
 
 .perigo-frio {
-  background-color: #5c6bc0;
+  background-color: rgb(17, 255, 17);
 }
 
-.perigo-quente {
-  background-color: #ff7043;
-}
+
 
 .alerta-frio {
-  background-color: #42a5f5;
+background-color: yellow;
 }
 
-.alerta-quente {
-  background-color: #ffee58;
-}
 
 .ideal {
-  background-color: #9ccc65;
+  background-color: rgb(255, 40, 40);
 }
 
-.cards {
+.dashRank {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   height: 450px;
-  width: 100%;
+  width: 78%;
   align-items: center;
   color: white;
+  background-color: rgb(11, 11, 11);
+  border-radius: 20px;
+  margin-left: 5vw;
+  box-shadow: 12px 12px 0 rgb(145, 145, 145);
+  margin-left: 8vw;
 }
 
 .card-aquario {
@@ -373,16 +383,21 @@ font-family: monospace;
   width: 100%;
   display: flex;
   justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+margin-left: 1vw;
+  line-height: 1.5 ;
+  text-align: center;
 }
 
 .hello h3 {
   color: black;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 15px;
 }
 
 .hello h3 span {
   font-weight: 800;
+  color: red;
 }
 
 .btn-nav {
@@ -393,19 +408,34 @@ font-family: monospace;
   border-radius: 20px;
   text-align: center;
   padding: 2% 5%;
-    font-size: 18px;
-font-family: monospace;
+    line-height: 1.2 ;
+    font-size: 13px;
+         box-shadow: 3px 3px 0 rgb(0, 0, 0);
+      text-shadow: 1.8px 1.8px 0 black;
+  font-family: 'Press Start 2P', cursive;
 
 }
 
 .btn-nav-white {
   width: 50%;
   background-color: white;
-  border: 3px solid #ff0000;
+  border: 3px solid #000000;
   border-radius: 20px;
   text-align: center;
   padding: 2% 5%;
-  font-size: 18px;
+  font-size: 13px;
+      line-height: 1.2 ;
+           box-shadow: 3px 3px 0 rgb(0, 0, 0);
+      text-shadow: 1.8px 1.8px 0 rgba(211, 211, 211, 0.814);
+        font-family: 'Press Start 2P', cursive;
+  transition: background-color 0.5s, border 0.5s;
+
+
+}
+.btn-nav-white:hover{
+  background-color: red;
+    border: 3px solid #ff0000;
+    color: white;
 }
 
 .btn-nav-white h3 {

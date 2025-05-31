@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="../js/sessao.js"> </script>
+    <link rel="stylesheet" href="../css/escolher.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="telaEscolha">
+        <div class="background">
+          <p>Escolha a dificuldade:</p>
+    <div onclick="facil()" class="botaoFacil">Fácil</div>
+
+    <div onclick="dificil()" class="botaoDificil">Difícil</div>
+    
+<a href="../index.html"><img src="../assets/voltar2.png" alt="voltar" class="btn-logout"></a>
+</div>
+</div>
+</body>
+</html>
+
+<script>
+    validarSessaoJogo()
+
+    function facil(){
+window.location.href = './faseFacil.html'    }
+
+function dificil(){
+window.location.href = './faseDificil.html'
+}
+</script>

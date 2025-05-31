@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="../js/sessao.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -28,7 +28,7 @@
             <img src="../assets/Made with insMind-logoVieck.png" class="logo">
 
             <div class="hello">
-                <h3>Olá, treinador <span id="b_usuario">usuário</span>!</h3>
+                <h3>Bem-vindo<br> Treinador <span id="b_usuario">usuário</span>!</h3>
             </div>
 
             <div class="btn-nav">
@@ -51,34 +51,34 @@
             <div id="alerta">
             </div>
             <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
-                </p>
-                <div class="parametros-alerta">
+             
+                <br>
+                <div class="parametros-rank">
                     <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
+                        <p>Top 1 a 3</p>
+                        <br>
+                        <p>Os melhores</p>
                     </div>
                     <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
+                        <p>Top 4 a 10</p>
+                        <br>
+                        <p>Bons Jogadores</p>
                     </div>
                     <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
+                        <p>Abaixo do Top 10</p>
+                        <br>
+                        <p>Jogadores Comuns</p>
                     </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
-                    </div>
+                 
                 </div>
+                
             </div>
-
-            <div class="cards" id="cardAquarios">
+                        <br><br>
+        <p class="titulo-legenda">
+         Ranking de Jogadores
+         </p>
+         <br>
+            <div class="dashRank" id="cardAquarios">
 
             </div>
 
@@ -89,6 +89,7 @@
 </body>
 
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function exibirAquarios() {
         JSON.parse(sessionStorage.AQUARIOS).forEach(item => {

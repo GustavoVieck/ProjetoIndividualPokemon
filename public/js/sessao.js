@@ -6,7 +6,7 @@ function validarSessao() {
     const pontuacao2 = document.getElementById('pontuacao2')
 
     if (email != null && nome != null) {
-        document.getElementById('login').innerHTML = `<li ><img style="width:24px;" src="assets/iconPerfil.png"></li>${nome} <li ><img  style="width:28px;cursor:pointer;" src="assets/voltar.png"  onclick="sair()" ></li>`
+        document.getElementById('login').innerHTML = `<li ><img style="width:24px;" src="assets/iconPerfil.png"></li>${nome} <li ><img  style="width:28px;cursor:pointer;" src="assets/deslogar.png"  onclick="sair()" ></li>`
         pontuacao.style.display = 'block';
         pontuacao2.style.display = 'block';
     

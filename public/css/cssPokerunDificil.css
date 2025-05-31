@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.game-board {
+  width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../assets/backDificil.gif);
+    padding-top: 20px;
+}
+
+.chao {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px; 
+    background: linear-gradient(#6d6d6d, #c3c4bd);
+    z-index: 0;
+    box-shadow: rgba(0, 0, 0, 0.67);
+
+}
+
+.pontos{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 black;
+    user-select: none;
+    right: 45%;
+    color: rgb(249, 242, 242);
+    }
+
+#pontuacaoFlutuante {
+    position: absolute;
+    color: rgb(0, 255, 0);
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px black;
+    animation: flutuar 1s ease-out forwards;
+    pointer-events: none;
+    font-family: 'Press Start 2P', cursive;
+    z-index: 4;
+}
+
+.fogo {
+    position: absolute;
+    bottom: 5px;
+    width: 80px;
+    animation: fogo-animation 1.1s infinite linear;
+    margin: 20px;
+    display: none;
+    transition: all 1s ease-out;
+    user-select: none;
+}
+.berry {
+  position: absolute; 
+  bottom: 120px;         
+  width: 40px;        
+  height: 40px;
+  animation: berry-animation 5s linear infinite;
+  z-index: 5;
+  display: none;
+    user-select: none;
+}
+
+
+.charizard {
+    position: absolute;
+    bottom: -20px;
+    width: 180px;
+    right: -70px;
+    user-select: none;
+}
+
+.red {
+    position: absolute;
+    width: 60px;
+    bottom: 1%;
+    left: 80px;
+    transition: left 3s linear, bottom 1s ease-out;
+    user-select: none;
+}
+.jump {
+    animation: red-jump 500ms ease-out;
+}
+
+
+.pokeball {
+    margin-right: 170px;
+    position: absolute;
+    width: 30px;
+    bottom: 80px;
+    right: 20px;
+    display: none;
+    z-index: 999;
+    transition: all 1s ease-out;
+    user-select: none;
+}
+
+
+
+
+.TelaComeco {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: white;
+}
+
+.TelaComeco p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    user-select: none;
+    text-shadow: 2px 2px 0px black;
+
+}
+
+.TelaComeco button {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    user-select: none;
+      box-shadow: 4px 4px 0px black;
+    text-shadow: 2px 2px 0 black;
+
+}
+
+.TelaComeco button:hover {
+    background-color: #218838;
+}
+
+.telaVitoria  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: white;
+}
+
+.telaVitoria p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    user-select: none;
+    text-shadow: 2px 2px 0px black;
+
+}
+
+.telaVitoria button  {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    user-select: none;
+    box-shadow: 4px 4px 0px black;
+    text-shadow: 2px 2px 0 black;
+
+}
+
+.telaVitoria button:hover  {
+    background-color: #218838;
+}
+
+.telaMorte{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: white;    
+}
+.telaMorte p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    user-select: none;
+    text-shadow: 2px 2px 0px black;
+
+}
+
+.telaMorte button{
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    user-select: none;
+      box-shadow: 4px 4px 0px black;
+    text-shadow: 2px 2px 0 black;
+}
+
+.telaMorte  button:hover {
+    background-color: #218838;
+}
+
+
+@keyframes fogo-animation {
+    from {
+        right: 0;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+
+
+
+@keyframes red-jump {
+    0% {
+        bottom: 10px;
+    }
+    40%, 50%, 60% {
+        bottom: 150px;
+    }
+    100% {
+        bottom: 10px;
+    }
+}
+@keyframes berry-animation {
+  0% {
+    left: 100%; 
+  }
+  100% {
+    left: -50%;  
+  }
+}
+
+
+@keyframes flutuar {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+@keyframes charizard-entra-pokebola {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  
+  100% {
+    transform: translateX(-150px) scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pokebola-tremendo {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100%{
+    transform: rotate(0);
+  }
+}
+.charizard-capturado {
+  animation: charizard-entra-pokebola 1.2s forwards ease-in;
+  z-index: 100;
+}
+.pokeball-tremendo {
+  animation: pokebola-tremendo 1.5s ;
+}

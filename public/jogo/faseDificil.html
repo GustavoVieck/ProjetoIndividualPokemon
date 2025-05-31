@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeRun Game</title>
+    <link rel="stylesheet" href="../css/cssPokerunDificil.css">
+    <link rel="icon" href="assets/icon/favicon2.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-board">
+            <div class="chao"></div>
+        <div id="div_pontos" class="pontos">Pontos: 0</div>
+        <img src="../assets/white_purple_fogo.png" class="fogo" style="display: none;">
+        <img src="" class="berry">
+        <img src="../assets/redParado_transparente.png" class="red">
+        <div id="pontuacaoFlutuante" style="display: none;">+0</div>
+        <img src="../assets/masterball.png" class="pokeball" style="display: none;">
+ <img src="../assets/palkia.png" class="charizard">
+
+    </div>
+
+    <div id="TelaComeco" class="TelaComeco">
+        <p>Deseja começar o jogo?</p>
+ <button id="botaoComecar">Começar</button>
+ <button id="botaoVoltar">Voltar</button>
+    </div>
+
+    <div id="telaVitoria" class="telaVitoria" style="display: none;">
+        <p>Você Capturou o Palkia!</p>
+        <br><br>
+      <button id="botaoJogarVitoria">Jogar Novamente</button>
+<button id="botaoVoltarVitoria">Voltar</button>
+    </div>
+
+    <div id="telaMorte" class="telaMorte" style="display: none;">
+        <p>Você morreu, mas não desista!</p>
+          <br> <br>
+       <button id="botaoJogarMorte">Jogar Novamente</button>
+<button id="botaoVoltarMorte">Voltar</button>
+    </div>
+</body>
+</html>
+<script src="./scriptDificil.js"></script>

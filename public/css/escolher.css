@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.telaEscolha {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/ash-ketchum-mestre-pokemon-artigo.jpg'); /* troque pelo seu caminho */
+  background-size: cover;
+  background-position: center;
+
+  z-index: 1000;
+  font-family: 'Press Start 2P', cursive;}
+
+  p{
+      color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 0 rgb(0, 0, 0);
+
+  }
+  .background{
+    background-color: rgba(0, 0, 0, 0.701);
+      width: 100%;
+  height: 100%;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
+
+.btn-logout{
+    width: 40px;
+  margin-top: 15px;   
+}
+
+.botaoFacil{
+     cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 15px;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border: 3px solid black;
+  width: 250px;
+  height: 50px;
+  align-self: center;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+    box-shadow: 2.5px 2.5px 0 rgb(0, 0, 0);
+      text-align: center;
+      justify-content:center;
+display: flex;
+      align-items: center;
+text-shadow: 2px 2px 0 rgb(188, 188, 188);
+}
+
+.botaoFacil:hover{
+    background-color: rgb(0, 211, 0);
+    color: white;
+    text-shadow: 2px 2px 0 rgb(2, 2, 2);
+}
+
+.botaoDificil{
+     cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 15px;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border: 3px solid black;
+  width: 250px;
+  height: 50px;
+  align-self: center;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+    box-shadow: 2.5px 2.5px 0 rgb(0, 0, 0);
+      text-align: center;
+      justify-content:center;
+display: flex;
+      align-items: center;
+text-shadow: 2px 2px 0 rgb(188, 188, 188);
+}
+
+.botaoDificil:hover{
+    background-color: red;
+    color: white;
+    text-shadow: 2px 2px 0 rgb(2, 2, 2);
+}
