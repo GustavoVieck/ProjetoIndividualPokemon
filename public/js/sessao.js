@@ -2,11 +2,30 @@
 function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
+    var foto = sessionStorage.FOTO_USUARIO;
     const pontuacao = document.getElementById('pontuacao');
     const pontuacao2 = document.getElementById('pontuacao2')
 
+ 
     if (email != null && nome != null) {
-        document.getElementById('login').innerHTML = `<li ><img style="width:24px;" src="assets/iconPerfil.png"></li>${nome} <li ><img  style="width:28px;cursor:pointer;" src="assets/deslogar.png"  onclick="sair()" ></li>`
+    if(foto == '1'){
+        foto = `<img id="pikachu_foto" src="./assets/pikachuFoto.jpg" alt="" style="width:40px;height:40px;border-radius:50px;">`
+    }
+        else if(foto == '2'){
+           foto = `<img id="charizard_foto" src="./assets/charizardFoto.jpg" alt="" style="width:40px;height:40px;border-radius:50px;">`
+        }
+        else if(foto == '3'){
+            foto =`<img id="garchomp_foto" src="./assets/garchomp.jpg" alt="" style="width:40px;height:40px;border-radius:50px;">`
+        }
+        else if (foto == '4'){
+            foto = `<img id="croagunk_foto" src="./assets/croagunkFoto.png" alt="" style="width:40px;height:40px;border-radius:50px;">`
+        }
+        else if (foto == '5'){
+            foto = `<img id="emolga_foto" src="./assets/emolga.png" alt="" style="width:40px;height:40px;border-radius:50px;">`
+        }
+        else if (foto == '6'){foto = `<img id="gengar_foto" src="./assets/gengar.jpg" alt="" style="width:40px;height:40px;border-radius:50px;">`}
+
+        document.getElementById('login').innerHTML = `<li>${foto}</li><li>${nome}<li> <li style="margin-right:15px;"><img  style="width:28px;cursor:pointer;" src="assets/deslogar.png"  onclick="sair()" ></li>`
         pontuacao.style.display = 'block';
         pontuacao2.style.display = 'block';
     
@@ -25,7 +44,8 @@ function validarSessaoJogo(){
     if (email != null && nome != null) {
         console.log('usuarioLogado')
     } else {
-        window.location = "../login.html";
+        window.location = "../login.html"
+        ;
     }
 }
 

@@ -26,6 +26,7 @@ var loop;
 var qtdBerry = 0;
 const dificuldade = 1
 var emPartida = false
+var multiplicador = 1
 
 function pular() {
     if (pulando || !comecouJogo) return;
@@ -60,14 +61,14 @@ function berryFazer() {
 
     if (aleatorio === 1) {
         berry.src = '../assets/berry.webp';
-        valorBerryAtual = 10;
+        valorBerryAtual = 10 * multiplicador;
     } else if (aleatorio === 2) {
         berry.src = '../assets/berry2.png';
-        valorBerryAtual = 20;
+        valorBerryAtual = 20 * multiplicador;
 
     } else {
         berry.src = '../assets/berry3.png';
-        valorBerryAtual = 30;
+        valorBerryAtual = 30 * multiplicador;
 
     }
 }
@@ -152,7 +153,7 @@ function iniciarJogo() {
             pontuacaoFlutuante.style.animation = 'flutuar 1.0s ease-out forwards';
 
             qtdBerry++
-
+            multiplicador++
             setTimeout(() => {
     pontuacaoFlutuante.style.display = 'none';
 }, 1200);
@@ -205,7 +206,7 @@ function iniciarJogo() {
 
        berry.style.animation = 'none';
             berry.style.display = 'none';
-            pontos += 100;
+            pontos += 100 * multiplicador;
             atualizarPontos();
 
             setTimeout(() => {

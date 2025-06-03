@@ -610,8 +610,8 @@ border-radius: 15px;
   color: black;
   width: 230px;
   position: fixed;
-  border-radius: 4px;
-  border: #ED145B 3px solid;
+  border-radius: 10px;
+  border: #ed1414 3px solid;
   padding: 10px;
   margin-right: 10%;
 }
@@ -619,4 +619,30 @@ border-radius: 15px;
 .card_erro #mensagem_erro{
   font-weight: 500;
   font-size: 20px;
+}
+
+.swiper {
+  width: 400px;
+  height: 150px;
+  color: #ff0000;
+}
+.swiper-button-prev{
+  color:red ;
+}
+.swiper-button-next{
+color: red;
+
+}
+.swiper-slide{
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.swiper-slide img{
+  width: 130px;
+  height: 130px;
+  border-radius: 100px;
 }

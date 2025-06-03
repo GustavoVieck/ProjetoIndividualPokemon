@@ -60,25 +60,7 @@
 
 
   </main>
-  <div class="footer">
-      <div class="container">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <h2>Vieckemon</h2>
-            <p>Uma dose de nostalgia!</p>
-          </div>
-          <div class="footer-links">
-            <a href="./index.html">Início</a>
-            <a href="./sobre.html">Sobre Mim</a>
-            
-          </div>
-
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 Vieckemon. Feito com amor, por um estudante SPTech❤️.</p>
-        </div>
-      </div>
-    </div>
+ 
 
 </body>
 
@@ -126,7 +108,9 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-
+                    sessionStorage.FOTO_USUARIO = json.fkFoto;
+                    cardErro.style.display="block"
+                      mensagem_erro.innerHTML = "Bem-vindo Treinador";
                     setTimeout(function () {
                         window.location = "./index.html";
                     }, 1000); // apenas para exibir o loading

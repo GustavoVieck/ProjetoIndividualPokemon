@@ -183,19 +183,19 @@ body {
 
 
 .alerta-frio {
-background-color: yellow;
+background-color: yellow
 }
 
 
 .ideal {
   background-color: rgb(255, 40, 40);
+  font-size: 13px;
 }
 
 .dashRank {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  height: 450px;
+  height: 65vh;
   width: 78%;
   align-items: center;
   color: white;
@@ -204,6 +204,7 @@ background-color: yellow;
   margin-left: 5vw;
   box-shadow: 12px 12px 0 rgb(145, 145, 145);
   margin-left: 8vw;
+  overflow: hidden;
 }
 
 .card-aquario {
@@ -460,4 +461,22 @@ margin-left: 1vw;
   margin-bottom: 30px;
   cursor: pointer;
   margin-left: 100px;
+}
+
+.colocacao{
+  height: 90%;
+  width: 96%;
+  overflow-y: auto ;
+  overflow-x: hidden;
+  background-color: rgb(11, 11, 11);
+  padding: 10px 10px;
+}
+
+.colocacao::-webkit-scrollbar{
+width: 8px;
+height: 70%;
+}
+.colocacao::-webkit-scrollbar-thumb{
+  background-color: rgba(185, 185, 185, 0.782);
+  border-radius: 10px;
 }
