@@ -28,11 +28,11 @@ var emPartida = false
 var multiplicador = 1
 
 function pular() {
-    if (pulando || !comecouJogo) return;
+    if (pulando || !comecouJogo || !emPartida) return;
 
-    red.classList.remove('jump'); 
-    void red.offsetWidth;        
-    red.classList.add('jump');   
+    red.classList.remove('jump');
+    void red.offsetWidth;
+    red.classList.add('jump');
     pulando = true;
 
     setTimeout(() => {
@@ -73,7 +73,7 @@ function berryFazer() {
 }
 
 function iniciarJogo() {
-    if (loop) clearInterval(loop);
+    if (loop);
 
     telaComeco.style.display = 'none';
     telaVitoria.style.display = 'none';
@@ -129,7 +129,7 @@ function iniciarJogo() {
             finalPartida = 0
 
             mostrarTelaMorte();
-    cadastrarPartida(fkUsuario,pontos,qtdBerry,finalPartida,dificuldade)
+            cadastrarPartida(fkUsuario, pontos, qtdBerry, finalPartida, dificuldade)
         }
 
         if (berryAtiva && colisaoHorizontal && colisaoVertical) {
@@ -138,7 +138,7 @@ function iniciarJogo() {
             atualizarPontos();
             berry.style.animation = 'none';
             berry.style.display = 'none';
-            
+
             const pontuacaoFlutuante = document.getElementById('pontuacaoFlutuante');
             pontuacaoFlutuante.innerText = `+${valorBerryAtual}`;
             pontuacaoFlutuante.style.left = '140px';
@@ -150,19 +150,20 @@ function iniciarJogo() {
             qtdBerry++
 
             setTimeout(() => {
-    pontuacaoFlutuante.style.display = 'none';
-}, 1200);
-            
+                pontuacaoFlutuante.style.display = 'none';
+            }, 1200);
+
 
 
             setTimeout(() => {
-         if (emPartida == true) {
-                berryFazer();
-                berry.style.left = '100%';
-                berry.style.display = 'block';
-                berry.style.animation = 'berry-animation 3s linear infinite';
+                if (emPartida == true) {
+                    berryFazer();
+                    berry.style.left = '100%';
+                    berry.style.display = 'block';
+                    berry.style.animation = 'berry-animation 3s linear infinite';
 
-                berryAtiva = true;}
+                    berryAtiva = true;
+                }
             }, 4000);
         }
 
@@ -172,7 +173,7 @@ function iniciarJogo() {
         }
 
     }, 10);
-    
+
     setTimeout(() => {
 
 
@@ -185,54 +186,55 @@ function iniciarJogo() {
             fogo.style.display = 'none';
             berry.style.animation = 'none';
             berry.style.display = 'none';
-            
-             pontuacaoFlutuante.innerText = `+${100}`;
+
+            pontuacaoFlutuante.innerText = `+${100}`;
             pontuacaoFlutuante.style.left = '120px';
             pontuacaoFlutuante.style.bottom = '70px';
             pontuacaoFlutuante.style.display = 'block';
-            pontuacaoFlutuante.style.animation = 'none';
+            pontuacaoFlutuante.style.animation = 'block';
             pontuacaoFlutuante.style.animation = 'flutuar 1.0s ease-out forwards';
 
-              setTimeout(() => {
-                   berry.style.animation = 'none';
-            berry.style.display = 'none';
-    pontuacaoFlutuante.style.display = 'none';
-}, 1200);
+            setTimeout(() => {
+                berry.style.animation = 'none';
+                berry.style.display = 'none';
+                pontuacaoFlutuante.style.display = 'none';
+            }, 1200);
 
-       berry.style.animation = 'none';
+            berry.style.animation = 'none';
             berry.style.display = 'none';
             pontos += 100 * multiplicador;
             atualizarPontos();
 
             setTimeout(() => {
-    pokeball.style.display = 'block';
-   berry.style.animation = 'none';
-            berry.style.display = 'none';
-    charizard.classList.add('charizard-capturado');
-    
-        setTimeout(() =>{
-              berry.style.animation = 'none';
-            berry.style.display = 'none';
-        pokeball.classList.add('pokeball-tremendo');
-},1400)
-red.src = '../assets/redParado_transparente.png';   
+                pokeball.style.display = 'block';
+                berry.style.animation = 'none';
+                berry.style.display = 'none';
+                charizard.classList.add('charizard-capturado');
+
+                setTimeout(() => {
+                    berry.style.animation = 'none';
+                    berry.style.display = 'none';
+                    pokeball.classList.add('pokeball-tremendo');
+                }, 1400)
+                red.src = '../assets/redParado_transparente.png';
             }, 3150);
-                 
-                setTimeout(()=>{
-                      berry.style.animation = 'none';
-            berry.style.display = 'none';
-    mostrarTelaVitoria();
+
+            setTimeout(() => {
+                berry.style.animation = 'none';
+                berry.style.display = 'none';
+                mostrarTelaVitoria();
                 finalPartida = 1
-                },6000)
+            }, 6000)
         }
-        if(emPartida==true){
-    cadastrarPartida(fkUsuario,pontos,qtdBerry,finalPartida,dificuldade)
-    }}, 32000);
+        if (emPartida == true) {
+            cadastrarPartida(fkUsuario, pontos, qtdBerry, finalPartida, dificuldade)
+        }
+    }, 32000);
     // 3200]
 }
 
 
-function iniciarJogoDnv(){
+function iniciarJogoDnv() {
     window.location.reload()
 }
 
@@ -241,7 +243,7 @@ function voltarHome() {
 }
 
 botaoComecar.addEventListener('click', iniciarJogo);
-botaoVoltar.addEventListener('click',voltarHome);
+botaoVoltar.addEventListener('click', voltarHome);
 botaoJogarVitoria.addEventListener('click', iniciarJogoDnv);
 botaoJogarMorte.addEventListener('click', iniciarJogoDnv);
 botaoVoltarVitoria.addEventListener('click', voltarHome);
@@ -260,37 +262,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-function cadastrarPartida(fkUsuario,pontos,qtdBerry,finalPartida,dificuldade){
-    fetch("/partidas/cadastrarPartida",{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
+function cadastrarPartida(fkUsuario, pontos, qtdBerry, finalPartida, dificuldade) {
+    fetch("/partidas/cadastrarPartida", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
         },
-        body:JSON.stringify({
+        body: JSON.stringify({
 
-            fkUsuario:fkUsuario,
-            pontos:pontos,
-            qtdBerry:qtdBerry,
-            finalPartida:finalPartida,
-            dificuldade:dificuldade
+            fkUsuario: fkUsuario,
+            pontos: pontos,
+            qtdBerry: qtdBerry,
+            finalPartida: finalPartida,
+            dificuldade: dificuldade
 
 
         })
     })
 
-    .then(function(resultado){
-        if(resultado.ok){
-            console.log('Partida registada')
-        }
-        else{
-            throw "ERRO ao registar a partida"
-        }
+        .then(function (resultado) {
+            if (resultado.ok) {
+                console.log('Partida registada')
+            }
+            else {
+                throw "ERRO ao registar a partida"
+            }
 
-    })
+        })
 
-    .catch(function(resultado){
-        console.log(`o erro foi:${resultado}`)
-    });
+        .catch(function (resultado) {
+            console.log(`o erro foi:${resultado}`)
+        });
 
     return false
 }

@@ -245,7 +245,6 @@ function voltarHome() {
     window.location.href = './escolher.html';
 }
 
-// Eventos dos botões
 botaoComecar.addEventListener('click', iniciarJogo);
 botaoVoltar.addEventListener('click',voltarHome);
 botaoJogarVitoria.addEventListener('click', iniciarJogoDnv);

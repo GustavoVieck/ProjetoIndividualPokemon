@@ -12,11 +12,12 @@ var cors = require("cors");
 var path = require("path");
 var PORTA_APP = process.env.APP_PORT;
 var HOST_APP = process.env.APP_HOST;
-
 var app = express();
 
 var usuarioRouter = require("./src/routes/usuarios");
 var partidaRouter = require("./src/routes/partidas");
+app.use('/partida', partidaRouter);
+var dashboardRouter = require("./src/routes/dashboard");
 
 
 app.use(express.json());
@@ -28,7 +29,7 @@ app.use(cors());
 
 app.use("/usuarios", usuarioRouter);
 app.use("/partidas", partidaRouter);
-
+app.use("/dashboard", dashboardRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`

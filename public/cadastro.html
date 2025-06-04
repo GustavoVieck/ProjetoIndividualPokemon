@@ -74,8 +74,8 @@
     <div class="swiper-slide" >Icone Pikachu <br><img id="pikachu_foto" src="./assets/pikachuFoto.jpg" alt=""></div>
     <div class="swiper-slide" >Icone Charizard <br><img id="charizard_foto" src="./assets/charizardFoto.jpg" alt=""></div>
     <div class="swiper-slide" >Icone Garchomp <br><img id="garchomp_foto" src="./assets/garchomp.jpg" alt=""></div>
-        <div class="swiper-slide" >Icone Croagunk <br><img id="croagunk_foto" src="./assets/croagunkFoto.png" alt=""></div>
-    <div class="swiper-slide" >Icone Emolga <br><img id="emolga_foto" src="./assets/emolga.png" alt=""></div>
+        <div class="swiper-slide" >Icone Croagunk <br><img id="croagunk_foto" src="./assets/croagunk.png" alt=""></div>
+    <div class="swiper-slide" >Icone Emolga <br><img id="emolga_foto" src="./assets/emolga.jpg" alt=""></div>
     <div class="swiper-slide" >Icone Gengar <br><img id="gengar_foto" src="./assets/gengar.jpg" alt=""></div>
 
   </div>
@@ -105,11 +105,9 @@
 <script>
 
   const swiper = new Swiper('.swiper', {
-  // Optional parameters
   direction: 'horizontal',
   loop: true,
 
-  // If we need pagination
   pagination: {
     el: '.swiper-pagination',
   },
@@ -120,10 +118,6 @@
     prevEl: '.swiper-button-prev',
   },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
 });
 
   var listaUsuario = [];

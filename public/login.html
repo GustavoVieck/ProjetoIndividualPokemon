@@ -117,7 +117,11 @@
                 });
 
             } else {
-
+                      cardErro.style.display="block"
+                      mensagem_erro.innerHTML = "Email ou Senha Inválido";
+                         setTimeout(function () {
+                    cardErro.style.display="none"
+                    }, 3000); // apenas para exibir o loading
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {

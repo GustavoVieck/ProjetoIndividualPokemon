@@ -1,5 +1,6 @@
 var partidaModel = require("../models/partidaModel");
 
+
 function cadastrarPartida(req,res){
     console.log("Recebido")
 var fkUsuario = req.body.fkUsuario;
@@ -22,6 +23,8 @@ partidaModel.cadastrarPartida(
     res.status(500).json(erro.sqlMessage);
 });
 }
+
+
 module.exports = {
-    cadastrarPartida
+    cadastrarPartida,
 }
