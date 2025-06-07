@@ -8,8 +8,32 @@ router.get("/puxarMelhorPontuacao/:fkUsuario", function (req, res) {
     dashboardController.puxarMelhorPontuacao(req, res);
 })
 
+router.get("/puxarMediaPontos/:fkUsuario", function (req, res) {
+    dashboardController.puxarMediaPontos(req, res);
+})
 
+router.get("/puxarMediaBerry/:fkUsuario", function (req, res) {
+    dashboardController.puxarMediaBerry(req, res);
+})
 
+router.get("/puxarPontosGrafico1/:fkUsuario", function (req, res) {
+    dashboardController.puxarPontosGrafico1(req, res);
+})
 
+router.get("/puxarPontosGrafico2/:fkUsuario", function (req, res) {
+    dashboardController.puxarPontosGrafico2(req, res);
+})
+
+router.get("/puxarMediaPontGeral/:fkUsuario", function (req, res) {
+    dashboardController.puxarMediaPontGeral(req, res);
+})
+
+router.get("/puxarMediaBerryGeral/:fkUsuario", function (req, res) {
+    dashboardController.puxarMediaBerryGeral(req, res);
+})
+
+router.get("/puxarMaxMediaPontGeral/:fkUsuario", function (req, res) {
+    dashboardController.puxarMaxMediaPontGeral(req, res);
+})
 
 module.exports = router;

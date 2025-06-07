@@ -1,6 +1,5 @@
 /* pagina mural */
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
   margin: 0;
@@ -23,7 +22,7 @@ body {
 
 .dash {
   width: 80%;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 20%;
   background-image: url(../assets/pikachu_wallpaper_no_spacing_1920x1080.png);
@@ -317,10 +316,10 @@ height: 70%;
   align-items: center;
 }
 .dashboard{
-  width: 95%;
+  position: fixed;
+  width:75%;
     margin-left: 2vw;
   height: 70%;
-  background-color: rgba(99, 99, 99, 0.334);
   display: flex;
   gap: 15px;
   justify-content: center;
@@ -332,20 +331,30 @@ height: 70%;
 
 .kpi{
   width: 20%;
-  height: 90%;
+  height: 80%;
   border-radius: 30px;
   text-align: center;
   justify-content: start;
   align-items: flex-start;
     font-family: 'Press Start 2P', cursive;
     font-size: 15px;
-    
+    padding: 9px 9px;
+    box-shadow: 3px 3px 3px 3px rgb(146, 146, 146);
+    border: 2px solid black;
+    background-color: rgb(255, 251, 251);
   }
 
 .graf{
 width: 48%;
 height: 73%;
-background-color: #ff000079;
+border: 2px solid black;
+    box-shadow: 6px 6px 6px 6px rgb(146, 146, 146);
+border-radius: 15px;
+align-items: center;
+display: flex;
+justify-content: center;
+padding: 10px 10px;
+background-color: rgb(255, 251, 251);
 }
 .kpi .legenda {
   display: flex;
@@ -353,6 +362,7 @@ background-color: #ff000079;
   gap: 10px;
   font-size: 12px;
   line-height: 3;
+  
 }
 
 .quadrado{
@@ -362,4 +372,15 @@ background-color: #ff000079;
   display: inline-block;
   border-radius: 4px;
 
+}
+
+
+.acima{
+color: rgb(0, 209, 0);
+}
+.abaixo{
+color: rgb(255, 17, 17) ;
+}
+.media{
+color:  rgb(146, 146, 0);
 }

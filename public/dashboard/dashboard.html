@@ -6,30 +6,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="./js/sessao.js"></script>
+    <script src="../js/sessao.js"></script>
     <title>Vieckemon | Pontos Usuário</title>
     <link rel="stylesheet" href="./../css/dashboards.css">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
 
 <body>
 
-    <div class="janela">    
+    <div class="janela">
         <div class="header-left">
             <img src="../assets/Made with insMind-logoVieck.png" class="logo">
-     <div id="foto"></div>
+            <div id="foto"></div>
             <div class="hello">
                 <h3>Bem-vindo<br> Treinador <span id="b_usuario">usuário</span>!</h3>
             </div>
@@ -46,37 +39,48 @@
 
             </div>
 
-        
 
-      <a href="../index.html"><img src="../assets/voltar.png" alt="voltar" class="btn-logout"></a>
+
+            <a href="../index.html"><img src="../assets/voltar.png" alt="voltar" class="btn-logout"></a>
 
 
         </div>
 
         <div class="dash"><br>
-          <div class="grafico">
-            <div class="kpi"><span>Sua Melhor Pontuação:</span><br><br><br><div style="font-size: 20px;" id="melhor_pontuacao">12</div></div>
-            <div class="kpi"><span>Média de Pontos:</span><br><br><br><div style="font-size: 20px;" id="media_pontos">12</div></div>
-            <div class="kpi"><span>Média de Berries pegas:</span><br><br><br><div style="font-size: 20px;" id="media_berry">12</div></div>
-           
-            <div class="kpi">
-                 <div class="legenda ">
-                 <div class="quadrado" style="background-color: rgb(0, 209, 0);"></div><span style="color: rgb(0, 209, 0); ;">Acima da Média</span> 
-                 </div>
-                <div class="legenda ">
-                 <div class="quadrado" style="background-color: rgb(255, 255, 17);"></div> <span style="color:  rgb(146, 146, 0);">Na Média</span> 
+            <div class="grafico">
+                <div class="kpi"><span>Sua Melhor Pontuação:</span><br><br><br>
+                    <div style="font-size: 20px;" id="melhor_pontuacao"></div>
                 </div>
-                 <div class="legenda ">
-                 <div class="quadrado" style="background-color: rgb(255, 17, 17);"></div><span style="color: rgb(255, 17, 17) ;">Abaixo da Média</span> 
-                     </div>
-                    </div>
+                <div class="kpi"><span>Média de Pontos:</span><br><br><br>
+                    <div style="font-size: 20px;" id="media_pontos"></div>
+                </div>
+                <div class="kpi"><span>Média de Berries pegas:</span><br><br><br>
+                    <div style="font-size: 20px;" id="media_berry"></div>
+                </div>
 
-          </div>
-          <br>
+                <div class="kpi">
+                    <div class="legenda ">
+                        <div class="quadrado" style="background-color: rgb(0, 209, 0);"></div><span
+                            class="acima">Acima da Média</span>
+                    </div>
+                    <div class="legenda ">
+                        <div class="quadrado" style="background-color: rgb(255, 255, 17);"></div> <span
+                            class="media">Na Média</span>
+                    </div>
+                    <div class="legenda ">
+                        <div class="quadrado" style="background-color: rgb(255, 17, 17);"></div><span
+                        class="abaixo">Abaixo da Média</span>
+                    </div>
+                </div>
+
+            </div>
+            <br>
             <div class="dashboard">
-                <div class="graf">  <canvas id="myChart" style="position: relative; height:50vh; width:50vw"></canvas>
-</div>
-                <div class="graf"></div>
+                <div class="graf"> <canvas id="grafico1" style="position: relative; height:50vh; width:50vw"></canvas>
+                </div>
+                <div class="graf">
+                     <canvas id="grafico2" style="position: relative; height:50vh; width:50vw"></canvas>
+                </div>
             </div>
         </div>
 
@@ -88,55 +92,395 @@
 </html>
 
 <script>
-  var fkUsuario = Number(sessionStorage.getItem('ID_USUARIO'));
+    var fkUsuario = Number(sessionStorage.getItem('ID_USUARIO'));
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
 
-    puxarMelhorPontuacao(fkUsuario);
 
 
-var fotoAtual = sessionStorage.FOTO_USUARIO
-if(fotoAtual == '1'){
-        foto.innerHTML = `<img id="pikachu_foto" src="../assets/pikachuFoto.jpg" alt="" style="width:60px;height:60px;border-radius:50px;border:solid 2px black;">`
+    var fotoAtual = sessionStorage.FOTO_USUARIO
+    if (fotoAtual == '1') {
+        foto.innerHTML = `<img id="pikachu_foto" src="../assets/pikachuFoto.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
     }
-        else if(fotoAtual == '2'){
-           foto.innerHTML = `<img id="charizard_foto" src="../assets/charizardFoto.jpg" alt="" style="width:40px;height:40px;border-radius:50px;border:solid 2px black;">`
-        }
-        else if(fotoAtual == '3'){
-            foto.innerHTML =`<img id="garchomp_foto" src="../assets/garchomp.jpg" alt="" style="width:40px;height:40px;border-radius:50px;border:solid 2px black;">`
-        }
-        else if (fotoAtual == '4'){
-            foto.innerHTML = `<img id="croagunk_foto" src="../assets/croagunk.png" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
-        }
-        else if (fotoAtual == '5'){
-            foto.innerHTML = `<img id="emolga_foto" src="../assets/emolga.jpg" alt="" style="width:40px;height:40px;border-radius:50px;border:solid 2px black;">`
-        }
-        else if (fotoAtual == '6'){foto.innerHTML = `<img id="gengar_foto" src="../assets/gengar.jpg" alt="" style="width:40px;height:40px;border-radius:50px;border:solid 2px black;">`}
+    else if (fotoAtual == '2') {
+        foto.innerHTML = `<img id="charizard_foto" src="../assets/charizardFoto.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
+    }
+    else if (fotoAtual == '3') {
+        foto.innerHTML = `<img id="garchomp_foto" src="../assets/garchomp.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
+    }
+    else if (fotoAtual == '4') {
+        foto.innerHTML = `<img id="croagunk_foto" src="../assets/croagunk.png" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
+    }
+    else if (fotoAtual == '5') {
+        foto.innerHTML = `<img id="emolga_foto" src="../assets/emolga.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
+    }
+    else if (fotoAtual == '6') { foto.innerHTML = `<img id="gengar_foto" src="../assets/gengar.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">` }
 
 
- function puxarMelhorPontuacao(fkUsuario) {
-            fetch(`/dashboard/puxarMelhorPontuacao/${fkUsuario}`, {
+  puxarMelhorPontuacao(fkUsuario);
+  puxarMediaPontos(fkUsuario);
+  puxarMediaBerry(fkUsuario);
+  puxarPontosGrafico1(fkUsuario);
+  puxarPontosGrafico2(fkUsuario);
+  puxarMediaPontGeral(fkUsuario);
+  puxarMediaBerryGeral(fkUsuario);
+  puxarMaxMediaPontGeral(fkUsuario);
 
-            method: 'GET',
-                cache: 'no-store' 
-            }).then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        validarPokemonJogador(resposta)
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-                .catch(function (error) {
-                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+
+
+
+    function puxarMelhorPontuacao(fkUsuario) {
+        fetch(`/dashboard/puxarMelhorPontuacao/${fkUsuario}`, { method: 'GET', cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    exibirMalhorPontuacao(resposta)
                 });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    
+    }
+
+    function exibirMalhorPontuacao(resposta){
+        var melhorPontuacao = resposta[0].maiorPont
+        
+        if(melhorPontuacao != undefined){
+        document.getElementById('melhor_pontuacao').textContent = melhorPontuacao
+    }
+    else{
+        document.getElementById('melhor_pontuacao').text = 'Pontuação Nula'
+    }
+}
+
+    
+
+// ---------------------------------------------------------------------------------------------------------------------------------------
+
+
+ function puxarMediaPontos(fkUsuario) {
+        fetch(`/dashboard/puxarMediaPontos/${fkUsuario}`, { method: 'GET', cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    exibirMediaPontos(resposta)
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    
+    }
+
+    function exibirMediaPontos(resposta){
+        var mediaPontos = resposta[0].mediaPont
+        
+        if(mediaPontos != undefined){
+        document.getElementById('media_pontos').textContent = mediaPontos
+          }
+            else{
+        document.getElementById('media_pontos').textContent = 'Média Nula'
+    }
+
+
+    }
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------
+
+
+ function puxarMediaBerry(fkUsuario) {
+        fetch(`/dashboard/puxarMediaBerry/${fkUsuario}`, { method: 'GET', cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    exibirMediaBerry(resposta)
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    
+    }
+
+    function exibirMediaBerry(resposta){
+        var mediaBerries = resposta[0].mediaBerry
+        
+        if(mediaBerries != undefined){
+        document.getElementById('media_berry').textContent = mediaBerries
+        }
+        else{
+        document.getElementById('media_berry').textContent = 'Média Nula'
+    }
+    }
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------
+
+
+ function puxarPontosGrafico1(fkUsuario) {
+        fetch(`/dashboard/puxarPontosGrafico1/${fkUsuario}`, { method: 'GET', cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    exibirPontosGrafico1(resposta)
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    
+    }
+
+    function exibirPontosGrafico1(resposta){
+        var xGrafico1 = []
+        var yGrafico1 = []
+        
+        
+            for(var i = 0; xGrafico1.length < resposta.length;i++){
+                xGrafico1.push(resposta[i].data_partida.split('T')[0])
+                yGrafico1.push(resposta[i].ponto_maximo)
+        }
+
+        const configuracao = {
+            type: 'line',
+            
+            data: {
+                labels: xGrafico1,
+                datasets:[{
+                    label: 'Maior Pontuação Diária',
+                    data: yGrafico1,
+                    borderColor:'rgba(5, 79, 119 )',
+                    backgroundColor: 'rgba(5, 79, 119)',
+                    borderWidth: 2
+                }]
+                
+            },
+            options:{
+                responsive:true,
+
+                plugins: {
+            title: { display: true, text: 'Maior Pontuação Diária Nos Últimos 10 Dias Jogados' },
+            }
+            }
+        }
+
+        const grafico = document.getElementById('grafico1').getContext('2d');
+        if (window.myGraf){
+            window.myGraf.destroy();
+        }
+        window.myGraf = new Chart(grafico,configuracao)
+    }
+
+    
+// ---------------------------------------------------------------------------------------------------------------------------------------
+
+
+ function puxarPontosGrafico2(fkUsuario) {
+        fetch(`/dashboard/puxarPontosGrafico2/${fkUsuario}`, { method: 'GET', cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    exibirPontosGrafico2(resposta)
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    
+    }
+
+    function exibirPontosGrafico2(resposta){
+       var labels = ['Capturou o Pokémon','Morreu']
+
+       var dados = {
+                labels: labels,
+                datasets:[{
+                    label: '',
+                    data: [Number(resposta[0].capturouPokemon), Number(resposta[0].morreu)],
+                    backgroundColor: [      
+                        'rgba(0, 128, 0)',
+                        'rgba(255, 23, 35)'],
+                    borderColor: [
+                       'rgba(1, 1, 1)',
+                        'rgba(1, 1, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+}
+    
+            var config = {
+                type: 'doughnut',
+                data: dados,
+                options: {
+                    responsive: false,
+                    plugins: {
+                legend: { position: 'top' },
+                title: { display: true, text: 'Resultados Final Da Partida' },
+                datalabels: {
+                color: 'rgba(1, 1, 1)',
+            
+                }
+            }
+        }
+    }
+            const graf2 = document.getElementById('grafico2').getContext('2d');
+            if (window.myChart) {
+                window.myChart.destroy();
+            }
+            window.myChart = new Chart(graf2, config);
+
+
+
+
         }
 
 
 
+
+    // ---------------------------------------------------------------------------------------------------------------------------------------
+
+
+ function puxarMediaPontGeral(fkUsuario) {
+        fetch(`/dashboard/puxarMediaPontGeral/${fkUsuario}`, { method: 'GET', cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        
+                    exibirMediaPontGeral(resposta)
+                });
+
+            
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+     
+
+    }
+
+
+  function exibirMediaPontGeral(resposta){
+        var mediaPontUsuario = Number(resposta[0].mediaPontUsuario)
+        var mediaPontGeral = Number(resposta[0].mediaPontGeral)
+
+    if(mediaPontGeral>mediaPontUsuario){
+            document.getElementById('media_pontos').classList.add('abaixo')
+        }
+
+    else if (mediaPontGeral == mediaPontUsuario){
+            document.getElementById('media_pontos').classList.add('media')
+    }
+    else{
+            document.getElementById('media_pontos').classList.add('acima')
+    }
+
+    }
+
+
+    // ---------------------------------------------------------------------------------------------------------------------------------------
+
+
+ function puxarMediaBerryGeral(fkUsuario) {
+        fetch(`/dashboard/puxarMediaBerryGeral/${fkUsuario}`, { method: 'GET', cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                         exibirMediaBerryGeral(resposta)
+
+                });
+
+            
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+     
+
+    }
+
+
+  function exibirMediaBerryGeral(resposta){
+        var mediaBerryUsuario = Number(resposta[0].mediaBerryUsuario)
+        var mediaBerryGeral = Number(resposta[0].mediaBerryGeral)
+
+
+    if(mediaBerryGeral>mediaBerryUsuario){
+            document.getElementById('media_berry').classList.add('abaixo')
+        }
+
+    else if (mediaBerryGeral == mediaBerryUsuario){
+            document.getElementById('media_berry').classList.add('media')
+    }
+    else{
+            document.getElementById('media_berry').classList.add('acima')
+    }
+
+    }
+
+    // ---------------------------------------------------------------------------------------------------------------------------------------
+
+
+ function puxarMaxMediaPontGeral(fkUsuario) {
+        fetch(`/dashboard/puxarMaxMediaPontGeral/${fkUsuario}`, { method: 'GET', cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                         exibirMaxMediaPontGeral(resposta)
+
+                });
+
+            
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+     
+
+    }
+
+
+  function exibirMaxMediaPontGeral(resposta){
+        var mediaMaxPontGeral = Number(resposta[0].mediaMaxPontGeral)
+        var maxPontUsuario = Number(resposta[0].maxPontUsuario)
+
+
+    if(mediaMaxPontGeral>maxPontUsuario){
+            document.getElementById('melhor_pontuacao').classList.add('abaixo')
+        }
+
+    else if (mediaMaxPontGeral == maxPontUsuario){
+            document.getElementById('melhor_pontuacao').classList.add('media')
+    }
+    else{
+            document.getElementById('melhor_pontuacao').classList.add('acima')
+    }
+
+    }
 
 </script>
-
-

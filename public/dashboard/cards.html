@@ -19,7 +19,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+<body>
 
     <div class="janela">
 
@@ -116,21 +116,21 @@
     var dados = []
 var fotoAtual = sessionStorage.FOTO_USUARIO
 if(fotoAtual == '1'){
-        foto.innerHTML = `<img id="pikachu_foto" src="../assets/pikachuFoto.jpg" alt="" style="width:60px;height:60px;border-radius:50px;border:solid 2px black;">`
+        foto.innerHTML = `<img id="pikachu_foto" src="../assets/pikachuFoto.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
     }
         else if(fotoAtual == '2'){
-           foto.innerHTML = `<img id="charizard_foto" src="../assets/charizardFoto.jpg" alt="" style="width:40px;height:40px;border-radius:50px;border:solid 2px black;">`
+           foto.innerHTML = `<img id="charizard_foto" src="../assets/charizardFoto.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
         }
         else if(fotoAtual == '3'){
-            foto.innerHTML =`<img id="garchomp_foto" src="../assets/garchomp.jpg" alt="" style="width:40px;height:40px;border-radius:50px;border:solid 2px black;">`
+            foto.innerHTML =`<img id="garchomp_foto" src="../assets/garchomp.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
         }
         else if (fotoAtual == '4'){
             foto.innerHTML = `<img id="croagunk_foto" src="../assets/croagunk.png" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
         }
         else if (fotoAtual == '5'){
-            foto.innerHTML = `<img id="emolga_foto" src="../assets/emolga.jpg" alt="" style="width:40px;height:40px;border-radius:50px;border:solid 2px black;">`
+            foto.innerHTML = `<img id="emolga_foto" src="../assets/emolga.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
         }
-        else if (fotoAtual == '6'){foto.innerHTML = `<img id="gengar_foto" src="../assets/gengar.jpg" alt="" style="width:40px;height:40px;border-radius:50px;border:solid 2px black;">`}
+        else if (fotoAtual == '6'){foto.innerHTML = `<img id="gengar_foto" src="../assets/gengar.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`}
 
 
         var msg = ""
