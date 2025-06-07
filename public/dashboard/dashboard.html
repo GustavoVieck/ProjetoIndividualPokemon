@@ -153,7 +153,7 @@
         document.getElementById('melhor_pontuacao').textContent = melhorPontuacao
     }
     else{
-        document.getElementById('melhor_pontuacao').text = 'Pontuação Nula'
+        document.getElementById('melhor_pontuacao').textContent = 'Pontuação Nula'
     }
 }
 
@@ -237,6 +237,7 @@
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
+                
             }
         })
             .catch(function (error) {

@@ -36,4 +36,9 @@ router.get("/puxarMaxMediaPontGeral/:fkUsuario", function (req, res) {
     dashboardController.puxarMaxMediaPontGeral(req, res);
 })
 
+router.get("/rank", function (req, res) {
+    
+    dashboardController.rank(req, res);
+})
+
 module.exports = router;

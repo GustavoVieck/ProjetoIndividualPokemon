@@ -180,6 +180,27 @@ dashboardModel.puxarMaxMediaPontGeral(fkUsuario).then(function(resposta){
 }
 
 
+function rank(req,res){
+    console.log("Recebido")
+var fkUsuario = req.params.fkUsuario;
+
+
+
+dashboardModel.rank(fkUsuario).then(function(resposta){
+    if (resposta.length>0){
+        res.json(resposta)
+    }
+    else{
+        res.status(204).json("Sem Resultado")
+    }
+})
+.catch(function (erro) {
+    console.log('DEU ERRO')
+    console.error("Erro ao cadastrar partida:",erro.sqlMessage);
+    res.status(500).json(erro.sqlMessage);
+});
+}
+
 module.exports = {
     puxarMelhorPontuacao,
     puxarMediaPontos,
@@ -188,5 +209,6 @@ module.exports = {
     puxarPontosGrafico2,
     puxarMediaPontGeral,
     puxarMediaBerryGeral,
-    puxarMaxMediaPontGeral
+    puxarMaxMediaPontGeral,
+    rank
 }

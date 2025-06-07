@@ -49,7 +49,7 @@ body {
   font-family: 'Press Start 2P', cursive;
   text-shadow: 2px 2px 0 rgb(173, 173, 173);
   font-size: 24px;
-  margin-left: 23vw;
+  margin-left: 17vw;
 }
 
 .parametros-rank {
@@ -81,20 +81,44 @@ body {
   font-weight: 800;
 }
 
-.perigo-frio {
+.top3 {
   background-color: rgb(17, 255, 17);
 }
 
-
-
-.alerta-frio {
-background-color: yellow
+.top3Texto{
+   color: rgb(17, 255, 17);
+  font-family: 'Press Start 2P', cursive;
+    font-size: 28px;
+  text-shadow: 2px 2px 0 black;
+  line-height: 1.5;
 }
 
 
-.ideal {
+.top10 {
+background-color: rgb(255, 255, 0);
+
+}
+
+.top10Texto {
+color: rgb(227, 227, 16);
+  font-family: 'Press Start 2P', cursive;
+    font-size: 28px;
+  text-shadow: 2px 2px 0 black;
+  line-height: 1.5;
+}
+
+
+.resto {
   background-color: rgb(255, 40, 40);
   font-size: 13px;
+}
+
+.restoTexto{
+  color: rgb(255, 40, 40);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 28px;
+  text-shadow: 2px 2px 0 black;
+  line-height: 1.5;
 }
 
 .dashRank {
@@ -104,7 +128,8 @@ background-color: yellow
   width: 78%;
   align-items: center;
   color: white;
-  background-color: rgb(11, 11, 11);
+  border: 2px solid black;
+  background-color: rgb(243, 243, 243);
   border-radius: 20px;
   margin-left: 5vw;
   box-shadow: 12px 12px 0 rgb(145, 145, 145);
@@ -293,7 +318,7 @@ margin-left: 1vw;
   width: 96%;
   overflow-y: auto ;
   overflow-x: hidden;
-  background-color: rgb(11, 11, 11);
+  background-color: rgb(243, 243, 243);
   padding: 10px 10px;
 }
 
@@ -302,7 +327,7 @@ width: 8px;
 height: 70%;
 }
 .colocacao::-webkit-scrollbar-thumb{
-  background-color: rgba(185, 185, 185, 0.782);
+  background-color: rgba(24, 24, 24, 0.782);
   border-radius: 10px;
 }
 
@@ -383,4 +408,11 @@ color: rgb(255, 17, 17) ;
 }
 .media{
 color:  rgb(146, 146, 0);
+}
+
+
+.pontos{
+  display: flex;
+text-align: end;
+margin-right: 30px;
 }

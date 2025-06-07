@@ -88,6 +88,19 @@ from (
         return database.executar(instrucaoSql);
 }
 
+function rank(){
+    var instrucaoSql = `
+      SELECT u.nome as NomeUsuario , MAX(p.pontos) as maiorPontuacao
+            FROM  usuario u JOIN
+                            partida p
+                            on u.id = p.fkUsuario
+                            GROUP BY nome 
+                            ORDER BY maiorPontuacao DESC;
+    `
+            console.log("Executando a instrução SQL: \n" + instrucaoSql);
+        return database.executar(instrucaoSql);
+}
+
 module.exports = {
     puxarMelhorPontuacao,
     puxarMediaPontos,
@@ -96,5 +109,6 @@ module.exports = {
     puxarPontosGrafico2,
     puxarMediaPontGeral,
     puxarMediaBerryGeral,
-    puxarMaxMediaPontGeral
+    puxarMaxMediaPontGeral,
+    rank
 };

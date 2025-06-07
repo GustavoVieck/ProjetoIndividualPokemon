@@ -10,13 +10,8 @@
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="../js/sessao.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
@@ -54,17 +49,17 @@
              
                 <br>
                 <div class="parametros-rank">
-                    <div class="item-regua perigo-frio">
+                    <div class="item-regua top3">
                         <p>Top 1 a 3</p>
                         <br>
                         <p>Os melhores</p>
                     </div>
-                    <div class="item-regua alerta-frio">
+                    <div class="item-regua top10">
                         <p>Top 4 a 10</p>
                         <br>
                         <p>Bons Jogadores</p>
                     </div>
-                    <div class="item-regua ideal">
+                    <div class="item-regua resto">
                         <p>Abaixo do Top 10</p>
                         <br>
                         <p>Jogadores Comuns</p>
@@ -75,7 +70,7 @@
             </div>
                         <br><br>
         <p class="titulo-legenda">
-         Ranking de Jogadores
+         Rank de Pontos dos Jogadores
          </p>
          <br>
             <div class="dashRank" id="cardAquarios">
@@ -91,29 +86,13 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
+   
 
 </script>
 
 </html>
 <script>
-    var dados = []
+
 var fotoAtual = sessionStorage.FOTO_USUARIO
 if(fotoAtual == '1'){
         foto.innerHTML = `<img id="pikachu_foto" src="../assets/pikachuFoto.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`
@@ -133,19 +112,63 @@ if(fotoAtual == '1'){
         else if (fotoAtual == '6'){foto.innerHTML = `<img id="gengar_foto" src="../assets/gengar.jpg" alt="" style="width:90px;height:90px;border-radius:50px;border:solid 2px black;">`}
 
 
-        var msg = ""
-        for(var i = 0; i<dados.lenght;i++){
-            if(i<=2){
-                //color verde
-            }
-            else if(i<=9){
-                // color amarelo
-            }
+        rank()
 
-            else{
-                // color vermelho
-            }
+    function rank() {
 
 
-        }
+        fetch(`../dashboard/rank`, { method: 'GET',   headers: { "Content-Type": "application/json",}})
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                         rankExibir(resposta)
+
+                });
+
+            
+            } else {
+                console.log('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.log(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    
+  function rankExibir(resposta){
+     var ranking = document.getElementById('colocacao')
+
+
+   for (var i = 0; i < resposta.length; i++) {
+                if (i < 3) {
+                    ranking.innerHTML += `                
+                    <div class ='top3Texto' style='display:flex;gap:100px;'>
+                    <h3 > ${i + 1}. </h3>
+                    <h3 >${resposta[i].NomeUsuario}</h3><br>
+                      <h3 class='pontos'>Pontos: ${resposta[i].maiorPontuacao}</h3>
+                    </div>
+                    <hr>`
+                } else if (i < 10) {
+                    ranking.innerHTML += `                
+                    <div class ='top10Texto' style='display:flex;gap:100px;'>
+                    <h3 >${i + 1}. </h3>
+                    <h3 >${resposta[i].NomeUsuario}</h3><br>
+                     <h3 class='pontos'>Pontos: ${resposta[i].maiorPontuacao}</h3>
+                    </div>
+                    <hr>`
+                } else  {
+                    ranking.innerHTML += `                
+                    <div class='restoTexto' style='display:flex;gap:100px'>
+                        <h3 >${i + 1}.</h3>
+                        <h3  >${resposta[i].NomeUsuario}</h3><br>
+                     <h3 class='pontos'> Pontos: ${resposta[i].maiorPontuacao}</h3>
+                    </div>
+                    <hr>`
+                } 
+              
+
+    }
+  } 
 </script>
