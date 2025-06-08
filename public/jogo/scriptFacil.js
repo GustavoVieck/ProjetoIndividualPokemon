@@ -27,6 +27,8 @@ var qtdBerry = 0;
 const dificuldade = 1
 var emPartida = false
 var multiplicador = 1
+var ganhou = 100
+
 
 function pular() {
     if (pulando || !comecouJogo) return;
@@ -191,7 +193,7 @@ function iniciarJogo() {
             berry.style.animation = 'none';
             berry.style.display = 'none';
             
-             pontuacaoFlutuante.innerText = `+${100}`;
+             pontuacaoFlutuante.innerText = `+${ganhou * multiplicador}`;
             pontuacaoFlutuante.style.left = '120px';
             pontuacaoFlutuante.style.bottom = '70px';
             pontuacaoFlutuante.style.display = 'block';
@@ -206,7 +208,7 @@ function iniciarJogo() {
 
        berry.style.animation = 'none';
             berry.style.display = 'none';
-            pontos += 100 * multiplicador;
+            pontos += ganhou * multiplicador;
             atualizarPontos();
 
             setTimeout(() => {
